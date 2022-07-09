@@ -12,69 +12,47 @@
 class Solution {
 public:
     
-    int DFS(TreeNode* root,unordered_map<TreeNode *,int> &dict)
+    bool DFS(TreeNode* root,int &height)
     {
         if(root == nullptr)
         {
-            return 0;
-        }
-        else if( dict.find(root) != dict.end())
-        {
-            return dict[root];
+            height = 0;
+            return true;
         }
         else
         {
-        
-            int left_height = DFS(root->left,dict);
-            int right_height = DFS(root->right,dict);
-        
-            dict[root] = max(left_height,right_height) + 1;
+            int left_height = 0;
+            int right_height = 0;
+            
+            bool left_status = DFS(root->left,left_height);
+            
+            if(left_status == false)
+                return false;
+            
+            bool right_status = DFS(root->right,right_height);
+            
+            if(right_status == false)
+                return false;
+         
+            
+            if(abs(left_height - right_height) > 1)
+                return false;
+            else
+                height = max(left_height,right_height) + 1;
+                return true;
+
         }
-        return dict[root] ;
         
 
     }
     
     bool isBalanced(TreeNode* root)
     {
-        unordered_map<TreeNode *,int> dict;
 
-        bool is_balanced = true;
-
-        queue<TreeNode *> elements;
-        
-        elements.push(root);
-        TreeNode *element;
-        int counter_right;
-        int counter_left;
-        
-        while(!elements.empty())
-        {
-            counter_right = 0;
-            counter_left = 0;
-            
-            element = elements.front();
-            elements.pop();
-            
-            if(element != nullptr)
-            {
-                counter_left = DFS(element->left,dict);
-                counter_right = DFS(element->right,dict);
-                
-                elements.push(element->left);
-                elements.push(element->right);
-                
-            }
-            
-            int height = abs(counter_left - counter_right);
-
-
-            if(height > 1)
-            {
-                is_balanced = false;
-                break;
-            }
-        }        
+        bool is_balanced = true;    
+        int height = 0;
+        is_balanced = DFS(root,height);
+ 
         return is_balanced;
     }
 };
