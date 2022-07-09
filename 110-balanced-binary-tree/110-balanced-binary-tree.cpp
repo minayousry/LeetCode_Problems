@@ -16,7 +16,7 @@ public:
     {
         if(root == nullptr)
         {
-            return -1;
+            return 0;
         }
         
         int left_height = DFS(root->left);
