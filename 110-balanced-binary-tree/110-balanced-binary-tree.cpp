@@ -12,32 +12,23 @@
 class Solution {
 public:
     
-    int DFS(TreeNode* root,unordered_map<TreeNode *,int> &dict)
+    int DFS(TreeNode* root)
     {
         if(root == nullptr)
         {
             return 0;
         }
-        else if( dict.find(root) != dict.end())
-        {
-            return dict[root];
-        }
-        else
-        {
         
-            int left_height = DFS(root->left,dict);
-            int right_height = DFS(root->right,dict);
-        
-            dict[root] = max(left_height,right_height) + 1;
-        }
-        return dict[root] ;
+        int left_height = DFS(root->left);
+        int right_height = DFS(root->right);
+            
+        return max(left_height,right_height) + 1;
         
 
     }
     
     bool isBalanced(TreeNode* root)
     {
-        unordered_map<TreeNode *,int> dict;
 
         bool is_balanced = true;
 
@@ -58,8 +49,8 @@ public:
             
             if(element != nullptr)
             {
-                counter_left = DFS(element->left,dict);
-                counter_right = DFS(element->right,dict);
+                counter_left = DFS(element->left);
+                counter_right = DFS(element->right);
                 
                 elements.push(element->left);
                 elements.push(element->right);
