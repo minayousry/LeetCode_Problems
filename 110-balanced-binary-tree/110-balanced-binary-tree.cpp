@@ -22,12 +22,14 @@ public:
         {
             return dict[root];
         }
+        else
+        {
         
-        int left_height = DFS(root->left,dict);
-        int right_height = DFS(root->right,dict);
+            int left_height = DFS(root->left,dict);
+            int right_height = DFS(root->right,dict);
         
-        dict[root] = max(left_height,right_height) + 1;
-            
+            dict[root] = max(left_height,right_height) + 1;
+        }
         return dict[root] ;
         
 
