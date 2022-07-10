@@ -16,7 +16,6 @@ public:
         
         while(count > k)
         {
-            cout<<"top is"<<data.top();
             data.pop();
             count--;
         }
