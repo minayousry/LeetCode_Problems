@@ -9,7 +9,7 @@ public:
         {
             return false;
         }
-        else if((adjacent_list.find(crs_num) != adjacent_list.end()) && (adjacent_list[crs_num].size() == 0))
+        else if((adjacent_list.find(crs_num) != adjacent_list.end()) && (adjacent_list[crs_num].empty()))
         {
             return true;
         }
