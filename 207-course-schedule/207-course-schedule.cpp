@@ -1,8 +1,7 @@
 class Solution {
 public:
     
-    bool DFS(vector<vector<int>> &prerequisites,
-             unordered_map<int,vector<int>> &adjacent_list,
+    bool DFS(unordered_map<int,vector<int>> &adjacent_list,
              unordered_set<int> &visited_courses,
              int crs_num)
     {
@@ -19,7 +18,7 @@ public:
         
         for(int crs:adjacent_list[crs_num])
         {
-               bool result = DFS(prerequisites,adjacent_list,visited_courses,crs);
+               bool result = DFS(adjacent_list,visited_courses,crs);
                if(result == false)
                {
                    return false;
@@ -45,7 +44,7 @@ public:
         
         for(int i=0;i<numCourses;++i)
         {
-            result &= DFS(prerequisites,adjacent_list,visited_courses,i);
+            result &= DFS(adjacent_list,visited_courses,i);
             if(result == false)
             {
                 break;
