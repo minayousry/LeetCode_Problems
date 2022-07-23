@@ -27,6 +27,7 @@ public:
                     left_ptr++;
                     max_left = max(max_left,height[left_ptr]);
                     trapped_water += (max_left - height[left_ptr]);
+
                     
                 }
                 else
@@ -34,6 +35,7 @@ public:
                     right_ptr--;
                     max_right = max(max_right,height[right_ptr]);
                     trapped_water += (max_right - height[right_ptr]);
+
                     
                 }
             }
