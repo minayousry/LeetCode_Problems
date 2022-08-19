@@ -8,7 +8,7 @@ public:
         
         int result;
         int start = 1;
-        int end = x;
+        int end = x/2;
         int mid;
    
         while(start <= end)
