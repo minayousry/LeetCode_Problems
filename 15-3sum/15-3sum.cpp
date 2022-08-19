@@ -31,18 +31,17 @@ public:
                           
                 if(sum == 0)
                 {
-                    vector<int> triplet;
-                    triplet.push_back(first_elm);
-                    triplet.push_back(second_elm);
-                    triplet.push_back(third_elm);
-                    
-
-                    total_triplets.push_back(triplet);
+                    total_triplets.push_back({first_elm,second_elm,third_elm});
                     
                     do
                     {
                         left_ptr++;
                     }while((left_ptr < right_ptr) && (nums[left_ptr] == nums[left_ptr - 1]));
+                    
+                    do
+                    {
+                        right_ptr--;
+                    }while((right_ptr > left_ptr) && (nums[right_ptr] == nums[right_ptr + 1]));
                     
                 }
                 else if(sum < 0)
