@@ -2,34 +2,31 @@ class Solution {
 public:
     bool judgeSquareSum(int c)
     {
-        
         bool is_square_sum = false;
-        map<int,bool> dict;
-        long int square_num = 0;
         
-         if(c < 3)
-            return true;
+        long int left_ptr = 0;
+        long int right_ptr = sqrt(c);
+        long long int sum;
         
-        dict[0] = true; 
-        for(int i=1;i<c;++i)
+        while(left_ptr<=right_ptr)
         {
-             square_num = pow(i,2);
+            sum = (left_ptr * left_ptr) + (right_ptr * right_ptr);
             
-             if(square_num <= static_cast<long int>(c))
-             {
-                if((square_num == (c - square_num)) || (dict.find(c - square_num) != dict.end()))
-                {
-                    is_square_sum = true;
-                    break;
-                }
-                dict[square_num] = true;    
-             }
-             else
-             {
-                 break;
-             }         
+            if(sum == static_cast<long int>(c))
+            {
+                return true;
+            }
+            else if(sum < static_cast<long int>(c))
+            {
+                left_ptr++;
+            }
+            else
+            {
+                right_ptr--;
+            }
         }
-   
+        
+        
         return is_square_sum;
     }
 
