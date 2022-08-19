@@ -10,7 +10,7 @@ public:
             return false;
         
         int start = 1;
-        int end = num;
+        int end = num/2;
         int mid;
 
         while(start <= end)
