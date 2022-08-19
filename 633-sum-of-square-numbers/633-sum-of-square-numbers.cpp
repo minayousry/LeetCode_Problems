@@ -4,7 +4,7 @@ public:
     {
         
         bool is_square_sum = false;
-        unordered_map<int,bool> dict;
+        map<int,bool> dict;
         long int square_num = 0;
         
          if(c < 3)
