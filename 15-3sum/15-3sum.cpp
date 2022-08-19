@@ -8,10 +8,11 @@ public:
         sort(nums.begin(),nums.end());
 
         long int sum;
+        
         for(int i=0;i<nums.size() - 2;++i)
         {
             
-            if((i > 0) && (nums[i] == nums[i-1]))
+            if((i > 0) && (nums[i - 1] == nums[i]))
                 continue;
             
             int first_elm = nums[i];        
