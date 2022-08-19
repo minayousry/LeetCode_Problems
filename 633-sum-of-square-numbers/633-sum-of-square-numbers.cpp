@@ -11,7 +11,7 @@ public:
             return true;
         
         dict[0] = true; 
-        for(int i=0;i<c;++i)
+        for(int i=1;i<c;++i)
         {
              square_num = pow(i,2);
             
