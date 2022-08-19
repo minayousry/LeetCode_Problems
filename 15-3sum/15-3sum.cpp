@@ -36,11 +36,14 @@ public:
                     triplet.push_back(second_elm);
                     triplet.push_back(third_elm);
                     
-                    if(find(total_triplets.begin(),total_triplets.end(),triplet) == total_triplets.end())
+
+                    total_triplets.push_back(triplet);
+                    
+                    do
                     {
-                        total_triplets.push_back(triplet);
-                    }
-                    left_ptr++;
+                        left_ptr++;
+                    }while((left_ptr < right_ptr) && (nums[left_ptr] == nums[left_ptr - 1]));
+                    
                 }
                 else if(sum < 0)
                 {
@@ -50,6 +53,8 @@ public:
                 {
                     right_ptr--;
                 }
+                
+                
             }
                 
 
