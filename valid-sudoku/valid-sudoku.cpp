@@ -12,6 +12,7 @@ public:
         {
             for(int j=0;j<9;++j)
             {
+
                 if((board[i][j] == '.') || (row_data.find(board[i][j]) == row_data.end()))
                 {
                     
