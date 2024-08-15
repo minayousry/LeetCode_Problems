@@ -12,17 +12,17 @@ public:
         
         if(s_size == t_size)
         {
-            unsigned int data1[26] = {0};
-            unsigned int data2[26] = {0};
+            unsigned int data1['z'+1] = {0};
+            unsigned int data2['z'+1] = {0};
              
 
             for(int i=0;i<s_size;++i)
             {
-                data1[s[i] - 'a'] += 1;
-                data2[t[i] - 'a'] += 1;
+                data1[s[i]] += 1;
+                data2[t[i]] += 1;
             }
 
-            for(int i=0;i<26;++i)
+            for(int i='a';i<='z';++i)
             {
                 if(data1[i] != data2[i])
                 {
