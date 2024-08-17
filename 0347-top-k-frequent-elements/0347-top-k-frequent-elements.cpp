@@ -8,6 +8,8 @@ public:
         bool end_loop = false;
         
         vector<vector<int>> freq(nums.size() + 1);
+
+        result.reserve(k);
         
         for(auto &num:nums)
         {
