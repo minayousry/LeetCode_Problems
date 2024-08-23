@@ -2,8 +2,6 @@ class Solution {
 public:
     int carFleet(int target, vector<int>& position, vector<int>& speed) {
 
-        int fleet_destination;
-
         vector<pair<int,int>> cars_info;
         stack<double> time_to_dist;
 
