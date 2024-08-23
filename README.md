@@ -23,6 +23,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 |  |
 | ------- |
+| [0022-generate-parentheses](https://github.com/minayousry/LeetCode_Problems/tree/master/0022-generate-parentheses) |
 | [0049-group-anagrams](https://github.com/minayousry/LeetCode_Problems/tree/master/0049-group-anagrams) |
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 ## Sorting
@@ -67,4 +68,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0150-evaluate-reverse-polish-notation](https://github.com/minayousry/LeetCode_Problems/tree/master/0150-evaluate-reverse-polish-notation) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/minayousry/LeetCode_Problems/tree/master/0022-generate-parentheses) |
+## Backtracking
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/minayousry/LeetCode_Problems/tree/master/0022-generate-parentheses) |
 <!---LeetCode Topics End-->
