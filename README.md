@@ -9,6 +9,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0001-two-sum](https://github.com/minayousry/LeetCode_Problems/tree/master/0001-two-sum) |
 | [0049-group-anagrams](https://github.com/minayousry/LeetCode_Problems/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/minayousry/LeetCode_Problems/tree/master/0074-search-a-2d-matrix) |
+| [0084-largest-rectangle-in-histogram](https://github.com/minayousry/LeetCode_Problems/tree/master/0084-largest-rectangle-in-histogram) |
 | [0128-longest-consecutive-sequence](https://github.com/minayousry/LeetCode_Problems/tree/master/0128-longest-consecutive-sequence) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/minayousry/LeetCode_Problems/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0238-product-of-array-except-self](https://github.com/minayousry/LeetCode_Problems/tree/master/0238-product-of-array-except-self) |
@@ -71,6 +72,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Stack
 |  |
 | ------- |
+| [0084-largest-rectangle-in-histogram](https://github.com/minayousry/LeetCode_Problems/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/minayousry/LeetCode_Problems/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0739-daily-temperatures](https://github.com/minayousry/LeetCode_Problems/tree/master/0739-daily-temperatures) |
 | [0883-car-fleet](https://github.com/minayousry/LeetCode_Problems/tree/master/0883-car-fleet) |
@@ -85,6 +87,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Monotonic Stack
 |  |
 | ------- |
+| [0084-largest-rectangle-in-histogram](https://github.com/minayousry/LeetCode_Problems/tree/master/0084-largest-rectangle-in-histogram) |
 | [0739-daily-temperatures](https://github.com/minayousry/LeetCode_Problems/tree/master/0739-daily-temperatures) |
 | [0883-car-fleet](https://github.com/minayousry/LeetCode_Problems/tree/master/0883-car-fleet) |
 ## Binary Search
