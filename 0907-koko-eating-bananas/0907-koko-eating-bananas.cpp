@@ -20,7 +20,7 @@ public:
             sum = 0; 
             for(auto &pile:piles)
             {
-                sum += ceil(static_cast<double>(pile)/rate);
+                sum += (pile + rate - 1) / rate;;
 
             }
 
