@@ -105,4 +105,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0074-search-a-2d-matrix](https://github.com/minayousry/LeetCode_Problems/tree/master/0074-search-a-2d-matrix) |
+## Linked List
+|  |
+| ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0019-remove-nth-node-from-end-of-list) |
+## Two Pointers
+|  |
+| ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0019-remove-nth-node-from-end-of-list) |
 <!---LeetCode Topics End-->
