@@ -14,16 +14,13 @@ public:
         }
 
         while(r < s.size())
-        {
-            
-            while(dict.find(s[r]) != dict.end())
+        { 
+            if(dict.find(s[r]) != dict.end() && dict[s[r]] >= l)
             {
-                dict.erase(s[l]);
-                l++;
-                
+                l = dict[s[r]] + 1;   
             }
             max_len = max(max_len, (r - l + 1));
-            dict[s[r]] = 1;
+            dict[s[r]] = r;
             r++;
         }
         return max_len;
