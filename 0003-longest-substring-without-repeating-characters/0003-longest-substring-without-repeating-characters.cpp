@@ -20,8 +20,9 @@ public:
             {
                 dict.erase(s[l]);
                 l++;
-                max_len = max(max_len, (r - l + 1));
+                
             }
+            max_len = max(max_len, (r - l + 1));
             dict[s[r]] = 1;
             r++;
         }
