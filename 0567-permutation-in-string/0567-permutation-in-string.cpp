@@ -18,7 +18,7 @@ public:
         int l = 0;
         int window_size = 0;
 
-        for(int r =0;r<s2.size();++r)
+        for(int r = 0;r<s2.size();++r)
         {
             dict2[s2[r] - 'a']++;
 
