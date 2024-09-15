@@ -1,47 +1,63 @@
 class Solution {
 public:
-
-
+    
     vector<vector<int>> threeSum(vector<int>& nums)
     {
+        vector<vector<int>> total_triplets;
+        
         sort(nums.begin(),nums.end());
 
-        int left = 0;
-        int right = int(nums.size()) - 1;
-        vector<vector<int>> ans;
-        int sum;
-        int found_index;
-        int target;
-
-        while (left < right) {
-            // do some logic here with left and right
-            sum = nums[left] + nums[right];
-            target = 0 - sum;
-            auto it = std::find(&nums[left+1],&nums[right - 1],target);
-            auto end = nums.end();
+        long int sum;
+        
+        for(int i=0;i<nums.size() - 2;++i)
+        {
             
-            if (it != 0)
+            if((i > 0) && (nums[i - 1] == nums[i]))
+                continue;
+            
+            int first_elm = nums[i];        
+            int left_ptr = i+1;
+            int right_ptr = nums.size() - 1; 
+            
+        
+            
+            
+            while(left_ptr < right_ptr)
             {
-                ans.push_back({nums[left],*it,nums[right]});
-                left++;
-            }
-            else
-            {
-                auto it2 = upper_bound(&nums[left+1],&nums[right - 1],target);
-                if(it2 != nums.end())
+                int second_elm = nums[left_ptr];
+                int third_elm = nums[right_ptr];
+                    
+                sum = first_elm + second_elm + third_elm;
+                          
+                if(sum == 0)
                 {
-                    left++;
+                    total_triplets.push_back({first_elm,second_elm,third_elm});
+                    
+                    do
+                    {
+                        left_ptr++;
+                    }while((left_ptr < right_ptr) && (nums[left_ptr] == nums[left_ptr - 1]));
+                    
+                    do
+                    {
+                        right_ptr--;
+                    }while((right_ptr > left_ptr) && (nums[right_ptr] == nums[right_ptr + 1]));
+                    
+                }
+                else if(sum < 0)
+                {
+                    left_ptr++;
                 }
                 else
                 {
-                    right--;
+                    right_ptr--;
                 }
-
+                
+                
             }
+                
 
         }
-
-        return ans;
-        
+        return total_triplets;
     }
 };
