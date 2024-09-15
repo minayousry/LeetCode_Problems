@@ -7,9 +7,6 @@ public:
 
         bool result = true;
 
-
-        
-        
         if(s_size == t_size)
         {
             unsigned int data1['z'+1] = {0};
