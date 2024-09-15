@@ -166,18 +166,21 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0100-same-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0100-same-tree) |
+| [0104-maximum-depth-of-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0110-balanced-binary-tree) |
 | [0572-subtree-of-another-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0572-subtree-of-another-tree) |
 ## Depth-First Search
 |  |
 | ------- |
 | [0100-same-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0100-same-tree) |
+| [0104-maximum-depth-of-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0110-balanced-binary-tree) |
 | [0572-subtree-of-another-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0572-subtree-of-another-tree) |
 ## Binary Tree
 |  |
 | ------- |
 | [0100-same-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0100-same-tree) |
+| [0104-maximum-depth-of-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0110-balanced-binary-tree) |
 | [0572-subtree-of-another-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0572-subtree-of-another-tree) |
 ## String Matching
@@ -192,4 +195,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0100-same-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0100-same-tree) |
+| [0104-maximum-depth-of-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0104-maximum-depth-of-binary-tree) |
 <!---LeetCode Topics End-->
