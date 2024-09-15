@@ -42,6 +42,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0003-longest-substring-without-repeating-characters](https://github.com/minayousry/LeetCode_Problems/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0022-generate-parentheses](https://github.com/minayousry/LeetCode_Problems/tree/master/0022-generate-parentheses) |
 | [0049-group-anagrams](https://github.com/minayousry/LeetCode_Problems/tree/master/0049-group-anagrams) |
+| [0125-valid-palindrome](https://github.com/minayousry/LeetCode_Problems/tree/master/0125-valid-palindrome) |
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 | [0424-longest-repeating-character-replacement](https://github.com/minayousry/LeetCode_Problems/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0567-permutation-in-string) |
@@ -139,6 +140,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0011-container-with-most-water](https://github.com/minayousry/LeetCode_Problems/tree/master/0011-container-with-most-water) |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0019-remove-nth-node-from-end-of-list) |
+| [0125-valid-palindrome](https://github.com/minayousry/LeetCode_Problems/tree/master/0125-valid-palindrome) |
 | [0141-linked-list-cycle](https://github.com/minayousry/LeetCode_Problems/tree/master/0141-linked-list-cycle) |
 | [0143-reorder-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0143-reorder-list) |
 | [0567-permutation-in-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0567-permutation-in-string) |
