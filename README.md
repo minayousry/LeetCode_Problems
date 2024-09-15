@@ -195,6 +195,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0104-maximum-depth-of-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0110-balanced-binary-tree) |
 | [0200-number-of-islands](https://github.com/minayousry/LeetCode_Problems/tree/master/0200-number-of-islands) |
+| [0207-course-schedule](https://github.com/minayousry/LeetCode_Problems/tree/master/0207-course-schedule) |
 | [0572-subtree-of-another-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0572-subtree-of-another-tree) |
 ## Binary Tree
 |  |
@@ -217,8 +218,17 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0100-same-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0200-number-of-islands](https://github.com/minayousry/LeetCode_Problems/tree/master/0200-number-of-islands) |
+| [0207-course-schedule](https://github.com/minayousry/LeetCode_Problems/tree/master/0207-course-schedule) |
 ## Greedy
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/minayousry/LeetCode_Problems/tree/master/0011-container-with-most-water) |
+## Graph
+|  |
+| ------- |
+| [0207-course-schedule](https://github.com/minayousry/LeetCode_Problems/tree/master/0207-course-schedule) |
+## Topological Sort
+|  |
+| ------- |
+| [0207-course-schedule](https://github.com/minayousry/LeetCode_Problems/tree/master/0207-course-schedule) |
 <!---LeetCode Topics End-->
