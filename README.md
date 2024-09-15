@@ -55,6 +55,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 | [0344-reverse-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0344-reverse-string) |
 | [0387-first-unique-character-in-a-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0387-first-unique-character-in-a-string) |
+| [0412-fizz-buzz](https://github.com/minayousry/LeetCode_Problems/tree/master/0412-fizz-buzz) |
 | [0424-longest-repeating-character-replacement](https://github.com/minayousry/LeetCode_Problems/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0567-permutation-in-string) |
 ## Sorting
@@ -106,6 +107,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0002-add-two-numbers](https://github.com/minayousry/LeetCode_Problems/tree/master/0002-add-two-numbers) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/minayousry/LeetCode_Problems/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0367-valid-perfect-square](https://github.com/minayousry/LeetCode_Problems/tree/master/0367-valid-perfect-square) |
+| [0412-fizz-buzz](https://github.com/minayousry/LeetCode_Problems/tree/master/0412-fizz-buzz) |
 ## Stack
 |  |
 | ------- |
@@ -267,4 +269,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0387-first-unique-character-in-a-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0387-first-unique-character-in-a-string) |
+## Simulation
+|  |
+| ------- |
+| [0412-fizz-buzz](https://github.com/minayousry/LeetCode_Problems/tree/master/0412-fizz-buzz) |
 <!---LeetCode Topics End-->
