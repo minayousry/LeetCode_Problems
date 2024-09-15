@@ -102,6 +102,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0002-add-two-numbers](https://github.com/minayousry/LeetCode_Problems/tree/master/0002-add-two-numbers) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/minayousry/LeetCode_Problems/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0367-valid-perfect-square](https://github.com/minayousry/LeetCode_Problems/tree/master/0367-valid-perfect-square) |
 ## Stack
 |  |
 | ------- |
@@ -137,6 +138,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/minayousry/LeetCode_Problems/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0278-first-bad-version](https://github.com/minayousry/LeetCode_Problems/tree/master/0278-first-bad-version) |
 | [0287-find-the-duplicate-number](https://github.com/minayousry/LeetCode_Problems/tree/master/0287-find-the-duplicate-number) |
+| [0367-valid-perfect-square](https://github.com/minayousry/LeetCode_Problems/tree/master/0367-valid-perfect-square) |
 | [0907-koko-eating-bananas](https://github.com/minayousry/LeetCode_Problems/tree/master/0907-koko-eating-bananas) |
 ## Matrix
 |  |
