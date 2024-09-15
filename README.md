@@ -20,6 +20,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0739-daily-temperatures](https://github.com/minayousry/LeetCode_Problems/tree/master/0739-daily-temperatures) |
 | [0883-car-fleet](https://github.com/minayousry/LeetCode_Problems/tree/master/0883-car-fleet) |
 | [0907-koko-eating-bananas](https://github.com/minayousry/LeetCode_Problems/tree/master/0907-koko-eating-bananas) |
+| [1127-last-stone-weight](https://github.com/minayousry/LeetCode_Problems/tree/master/1127-last-stone-weight) |
 ## Hash Table
 |  |
 | ------- |
@@ -61,6 +62,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0023-merge-k-sorted-lists](https://github.com/minayousry/LeetCode_Problems/tree/master/0023-merge-k-sorted-lists) |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
+| [1127-last-stone-weight](https://github.com/minayousry/LeetCode_Problems/tree/master/1127-last-stone-weight) |
 ## Bucket Sort
 |  |
 | ------- |
