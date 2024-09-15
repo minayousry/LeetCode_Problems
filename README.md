@@ -10,6 +10,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0004-median-of-two-sorted-arrays](https://github.com/minayousry/LeetCode_Problems/tree/master/0004-median-of-two-sorted-arrays) |
 | [0011-container-with-most-water](https://github.com/minayousry/LeetCode_Problems/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/minayousry/LeetCode_Problems/tree/master/0015-3sum) |
+| [0035-search-insert-position](https://github.com/minayousry/LeetCode_Problems/tree/master/0035-search-insert-position) |
 | [0049-group-anagrams](https://github.com/minayousry/LeetCode_Problems/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/minayousry/LeetCode_Problems/tree/master/0074-search-a-2d-matrix) |
 | [0084-largest-rectangle-in-histogram](https://github.com/minayousry/LeetCode_Problems/tree/master/0084-largest-rectangle-in-histogram) |
@@ -130,6 +131,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/minayousry/LeetCode_Problems/tree/master/0004-median-of-two-sorted-arrays) |
+| [0035-search-insert-position](https://github.com/minayousry/LeetCode_Problems/tree/master/0035-search-insert-position) |
 | [0074-search-a-2d-matrix](https://github.com/minayousry/LeetCode_Problems/tree/master/0074-search-a-2d-matrix) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/minayousry/LeetCode_Problems/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/minayousry/LeetCode_Problems/tree/master/0167-two-sum-ii-input-array-is-sorted) |
