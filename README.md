@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0001-two-sum](https://github.com/minayousry/LeetCode_Problems/tree/master/0001-two-sum) |
 | [0004-median-of-two-sorted-arrays](https://github.com/minayousry/LeetCode_Problems/tree/master/0004-median-of-two-sorted-arrays) |
+| [0011-container-with-most-water](https://github.com/minayousry/LeetCode_Problems/tree/master/0011-container-with-most-water) |
 | [0049-group-anagrams](https://github.com/minayousry/LeetCode_Problems/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/minayousry/LeetCode_Problems/tree/master/0074-search-a-2d-matrix) |
 | [0084-largest-rectangle-in-histogram](https://github.com/minayousry/LeetCode_Problems/tree/master/0084-largest-rectangle-in-histogram) |
@@ -136,6 +137,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Two Pointers
 |  |
 | ------- |
+| [0011-container-with-most-water](https://github.com/minayousry/LeetCode_Problems/tree/master/0011-container-with-most-water) |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0141-linked-list-cycle](https://github.com/minayousry/LeetCode_Problems/tree/master/0141-linked-list-cycle) |
 | [0143-reorder-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0143-reorder-list) |
@@ -198,4 +200,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0100-same-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0104-maximum-depth-of-binary-tree) |
+## Greedy
+|  |
+| ------- |
+| [0011-container-with-most-water](https://github.com/minayousry/LeetCode_Problems/tree/master/0011-container-with-most-water) |
 <!---LeetCode Topics End-->
