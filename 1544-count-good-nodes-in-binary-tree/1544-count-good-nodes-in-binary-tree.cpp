@@ -21,8 +21,9 @@ public:
             {
                 count++;
             }
-            Dfs(root->left,max(prev_val,root->val),count);
-            Dfs(root->right,max(prev_val,root->val),count);
+            prev_val = max(prev_val,root->val);
+            Dfs(root->left,prev_val,count);
+            Dfs(root->right,prev_val,count);
             
         }
     }
