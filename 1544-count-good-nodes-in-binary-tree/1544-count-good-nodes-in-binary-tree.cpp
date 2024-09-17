@@ -12,26 +12,26 @@
 class Solution {
 public:
 
-    void Dfs(TreeNode* root,int prev_val,int &count)
+    int Dfs(TreeNode* root,int prev_val)
     {
-        
+        int result = 0;
         if(root != nullptr)
         {
             if(root->val >= prev_val)
             {
-                count++;
+                result = 1;
             }
             prev_val = max(prev_val,root->val);
-            Dfs(root->left,prev_val,count);
-            Dfs(root->right,prev_val,count);
-            
+            result+= Dfs(root->left,prev_val);
+            result+= Dfs(root->right,prev_val);  
         }
+        return result;
     }
     int goodNodes(TreeNode* root) {
 
         int count = 0;
         int prev_val = INT_MIN;
-        Dfs(root,prev_val,count);
+        count = Dfs(root,prev_val);
 
         return count;
     }
