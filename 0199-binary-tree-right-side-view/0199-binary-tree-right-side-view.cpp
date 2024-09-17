@@ -25,7 +25,7 @@ public:
             while(!data.empty())
             {
                 int len = data.size();
-                stack<int> vals;
+                stack<int> level_values;
                 for(int i=0;i<len;++i)
                 {
                     auto elm = data.front();
@@ -34,19 +34,19 @@ public:
                     if(elm->left)
                     {
                         data.push(elm->left);
-                        vals.push(elm->left->val);
+                        level_values.push(elm->left->val);
                     }
 
                     if(elm->right)
                     {
                         data.push(elm->right);
-                        vals.push(elm->right->val);
+                        level_values.push(elm->right->val);
                     }
                 }
                 
-                if(vals.size() > 0)
+                if(level_values.size() > 0)
                 {
-                    result.push_back(vals.top());
+                    result.push_back(level_values.top());
                 }
                 
             }
