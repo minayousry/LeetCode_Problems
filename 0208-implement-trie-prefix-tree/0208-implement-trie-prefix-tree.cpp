@@ -1,6 +1,6 @@
 struct Node
 {
-    map<char,Node*> children;
+    map<char,unique_ptr<Node>> children;
     bool end_of_w;
 
     Node()
@@ -14,21 +14,21 @@ struct Node
 class Trie {
 public:
 
-    Node root;
+    unique_ptr<Node> root;
     Trie() {
-        
+        root = make_unique<Node>();
     }
     
     void insert(string word) {
-        Node* current = &root;
+        Node* current = root.get();
 
         for(auto c:word)
         {
             if(current->children.find(c) == current->children.end())
             {
-                current->children[c] = new Node;    
+                current->children[c] = make_unique<Node>();    
             }
-            current = current->children[c];
+            current = current->children[c].get();
             
 
 
@@ -37,14 +37,14 @@ public:
     }
     
     bool search(string word) {
-        Node* current = &root;
+        Node* current = root.get();
         bool result = true;
 
         for(auto c:word)
         {
             if(current->children.find(c) != current->children.end())
             {
-                current = current->children[c];
+                current = current->children[c].get();
             }
             else
             {
@@ -60,14 +60,14 @@ public:
     }
     
     bool startsWith(string prefix) {
-        Node* current = &root;
+        Node* current = root.get();
         bool result = true;
 
         for(auto c:prefix)
         {
             if(current->children.find(c) != current->children.end())
             {
-                current = current->children[c];
+                current = current->children[c].get();
             }
             else
             {
