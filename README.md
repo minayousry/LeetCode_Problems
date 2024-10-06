@@ -58,6 +58,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0049-group-anagrams](https://github.com/minayousry/LeetCode_Problems/tree/master/0049-group-anagrams) |
 | [0125-valid-palindrome](https://github.com/minayousry/LeetCode_Problems/tree/master/0125-valid-palindrome) |
 | [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
+| [0211-design-add-and-search-words-data-structure](https://github.com/minayousry/LeetCode_Problems/tree/master/0211-design-add-and-search-words-data-structure) |
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 | [0344-reverse-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0344-reverse-string) |
 | [0387-first-unique-character-in-a-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0387-first-unique-character-in-a-string) |
@@ -203,6 +204,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0146-lru-cache](https://github.com/minayousry/LeetCode_Problems/tree/master/0146-lru-cache) |
 | [0155-min-stack](https://github.com/minayousry/LeetCode_Problems/tree/master/0155-min-stack) |
 | [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
+| [0211-design-add-and-search-words-data-structure](https://github.com/minayousry/LeetCode_Problems/tree/master/0211-design-add-and-search-words-data-structure) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
 ## Doubly-Linked List
 |  |
@@ -241,6 +243,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0200-number-of-islands](https://github.com/minayousry/LeetCode_Problems/tree/master/0200-number-of-islands) |
 | [0207-course-schedule](https://github.com/minayousry/LeetCode_Problems/tree/master/0207-course-schedule) |
 | [0210-course-schedule-ii](https://github.com/minayousry/LeetCode_Problems/tree/master/0210-course-schedule-ii) |
+| [0211-design-add-and-search-words-data-structure](https://github.com/minayousry/LeetCode_Problems/tree/master/0211-design-add-and-search-words-data-structure) |
 | [0226-invert-binary-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0226-invert-binary-tree) |
 | [0235-lowest-common-ancestor-of-a-binary-search-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0235-lowest-common-ancestor-of-a-binary-search-tree) |
 | [0572-subtree-of-another-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0572-subtree-of-another-tree) |
@@ -321,4 +324,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
+| [0211-design-add-and-search-words-data-structure](https://github.com/minayousry/LeetCode_Problems/tree/master/0211-design-add-and-search-words-data-structure) |
 <!---LeetCode Topics End-->
