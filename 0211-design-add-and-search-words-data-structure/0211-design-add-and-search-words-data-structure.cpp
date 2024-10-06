@@ -11,6 +11,14 @@ struct Node
         }
         end_of_w = false;
     }
+
+    ~Node()
+    {
+        for(int i=0;i<26;i++)
+        {
+            delete children[i];
+        }
+    }
 };
 
 class WordDictionary {
