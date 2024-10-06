@@ -1,10 +1,14 @@
 struct Node
 {
-    map<char,unique_ptr<Node>> children;
+    Node* children[26];
     bool end_of_w;
 
     Node()
     {
+        for(int i=0;i<26;i++)
+        {
+            children[i] = nullptr;
+        }
         end_of_w = false;
     }
 
@@ -14,37 +18,39 @@ struct Node
 class Trie {
 public:
 
-    unique_ptr<Node> root;
+    Node root;
     Trie() {
-        root = make_unique<Node>();
+
     }
     
     void insert(string word) {
-        Node* current = root.get();
+        Node* current = &root;
+        int index;
 
-        for(auto c:word)
+        for(auto &c:word)
         {
-            if(current->children.find(c) == current->children.end())
+            index = c - 'a';
+            if(current->children[index] == nullptr)
             {
-                current->children[c] = make_unique<Node>();    
+                current->children[index] = new Node;    
             }
-            current = current->children[c].get();
+            current = current->children[index];
             
-
-
         }
         current->end_of_w = true;
     }
     
     bool search(string word) {
-        Node* current = root.get();
+        Node* current = &root;
         bool result = true;
+        int index;
 
-        for(auto c:word)
+        for(auto &c:word)
         {
-            if(current->children.find(c) != current->children.end())
+            index = c - 'a';
+            if(current->children[index] != nullptr)
             {
-                current = current->children[c].get();
+                current = current->children[index];
             }
             else
             {
@@ -60,14 +66,16 @@ public:
     }
     
     bool startsWith(string prefix) {
-        Node* current = root.get();
+        Node* current = &root;
         bool result = true;
+        int index;
 
-        for(auto c:prefix)
+        for(auto &c:prefix)
         {
-            if(current->children.find(c) != current->children.end())
+            index = c - 'a';
+            if(current->children[index] != nullptr)
             {
-                current = current->children[c].get();
+                current = current->children[index];
             }
             else
             {
