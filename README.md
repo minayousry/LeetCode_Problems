@@ -42,6 +42,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0138-copy-list-with-random-pointer](https://github.com/minayousry/LeetCode_Problems/tree/master/0138-copy-list-with-random-pointer) |
 | [0141-linked-list-cycle](https://github.com/minayousry/LeetCode_Problems/tree/master/0141-linked-list-cycle) |
 | [0146-lru-cache](https://github.com/minayousry/LeetCode_Problems/tree/master/0146-lru-cache) |
+| [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
 | [0217-contains-duplicate](https://github.com/minayousry/LeetCode_Problems/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
@@ -56,6 +57,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0022-generate-parentheses](https://github.com/minayousry/LeetCode_Problems/tree/master/0022-generate-parentheses) |
 | [0049-group-anagrams](https://github.com/minayousry/LeetCode_Problems/tree/master/0049-group-anagrams) |
 | [0125-valid-palindrome](https://github.com/minayousry/LeetCode_Problems/tree/master/0125-valid-palindrome) |
+| [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 | [0344-reverse-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0344-reverse-string) |
 | [0387-first-unique-character-in-a-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0387-first-unique-character-in-a-string) |
@@ -200,6 +202,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0146-lru-cache](https://github.com/minayousry/LeetCode_Problems/tree/master/0146-lru-cache) |
 | [0155-min-stack](https://github.com/minayousry/LeetCode_Problems/tree/master/0155-min-stack) |
+| [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
 ## Doubly-Linked List
 |  |
@@ -314,4 +317,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
+## Trie
+|  |
+| ------- |
+| [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
 <!---LeetCode Topics End-->
