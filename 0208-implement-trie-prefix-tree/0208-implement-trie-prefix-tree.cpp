@@ -1,6 +1,6 @@
 struct Node
 {
-    unordered_map<char,Node*> children;
+    map<char,Node*> children;
     bool end_of_w;
 
     Node()
