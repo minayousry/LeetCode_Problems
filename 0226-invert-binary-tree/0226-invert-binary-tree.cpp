@@ -17,9 +17,9 @@ public:
         TreeNode* temp;
         if(*root)
         {
-            temp = (*root)->left;
-            (*root)->left = (*root)->right;
-            (*root)->right = temp;
+
+
+            swap((*root)->left,(*root)->right);
 
             swapDfs(&((*root)->left));
             swapDfs(&((*root)->right));
