@@ -12,27 +12,14 @@
 class Solution {
 public:
 
-    void swapDfs(TreeNode** root)
-    {
-        TreeNode* temp;
-        if(*root)
-        {
-
-
-            swap((*root)->left,(*root)->right);
-
-            swapDfs(&((*root)->left));
-            swapDfs(&((*root)->right));
-        }
-        
-    }
     TreeNode* invertTree(TreeNode* root) {
         
-        TreeNode* start = root;
         if(root)
         {
-            swapDfs(&root);
+            swap(root->left,root->right);
+            invertTree(root->left);
+            invertTree(root->right);
         }
-        return start;
+        return root;
     }
 };
