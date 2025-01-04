@@ -11,28 +11,28 @@
  */
 class Solution {
 public:
-
-    bool isSame(TreeNode* p, TreeNode* q) 
+    bool Dfs(TreeNode* p, TreeNode* q)
     {
-        if((p == nullptr) && (q == nullptr))
+        if(p == nullptr && q ==nullptr)
         {
             return true;
         }
-        else if((p == nullptr) || (q == nullptr) || (p->val != q->val))
+        
+        if(p == nullptr || q == nullptr)
         {
             return false;
         }
-        else
+        
+        if(p->val != q->val)
         {
-            return isSame(p->right,q->right) && isSame(p->left,q->left);
+            return false;
         }
 
+        return Dfs(p->right,q->right) && Dfs(p->left,q->left);
+        
     }
 
     bool isSameTree(TreeNode* p, TreeNode* q) {
-
-
-        return isSame(p,q);
-        
+        return Dfs(p,q);
     }
 };
