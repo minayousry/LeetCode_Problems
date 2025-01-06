@@ -11,28 +11,31 @@
  */
 class Solution {
 public:
-
-    int Dfs(TreeNode* root,int prev_val)
+    int dfs(TreeNode* node,int max_val)
     {
-        int result = 0;
-        if(root != nullptr)
+        int res = 0;
+        if(node == nullptr)
         {
-            if(root->val >= prev_val)
-            {
-                result = 1;
-            }
-            prev_val = max(prev_val,root->val);
-            result+= Dfs(root->left,prev_val);
-            result+= Dfs(root->right,prev_val);  
+            return 0;
         }
-        return result;
+        
+        if(node->val >= max_val)
+        {
+            res = 1;
+        }
+        else
+        {
+            res = 0;
+        }
+
+        max_val = max(max_val,node->val);
+
+        res += dfs(node->left,max_val);
+        res += dfs(node->right,max_val);
+        return res;
+
     }
     int goodNodes(TreeNode* root) {
-
-        int count = 0;
-        int prev_val = INT_MIN;
-        count = Dfs(root,prev_val);
-
-        return count;
+        return dfs(root,root->val);
     }
 };
