@@ -1,41 +1,37 @@
-#include <bits/stdc++.h>
 class Solution {
 public:
-    vector<int> topKFrequent(vector<int>& nums, int k)
-    {
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        
         vector<int> result;
-        unordered_map<int,int> count;
-        bool end_loop = false;
         
-        vector<vector<int>> freq(nums.size() + 1);
+        unordered_map<int,int> occurances; 
 
-        result.reserve(k);
+        priority_queue<pair<int,int>> data;
         
-        for(auto &num:nums)
+
+        for(int i=0;i<nums.size();++i)
         {
-            count[num] +=1;
+            occurances[nums[i]]++;
         }
 
-        for(auto &elm:count)
+        for(auto it = occurances.begin();it != occurances.end();++it)
         {
-            freq[elm.second].emplace_back(elm.first);
+            data.push({it->second, it->first});            
         }
 
-        for(auto rit = freq.rbegin();(!end_loop && (rit != freq.rend()));++rit)
+        while(!data.empty())
         {
-            for(int i=0;i<rit->size();++i)
+            if(k > 0)
             {
-                result.emplace_back((*rit)[i]);
+                result.push_back(data.top().second);
+                data.pop();
                 k--;
-                if(k == 0)
-                {
-                    end_loop = true;
-                    break;
-                }
             }
-            
+            else
+            {
+                break;
+            }
         }
-
 
         return result;
     }
