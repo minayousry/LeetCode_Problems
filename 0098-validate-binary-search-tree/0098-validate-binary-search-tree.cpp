@@ -49,17 +49,36 @@ public:
 
     bool isValidBST(TreeNode* root) {
 
-        bool result;
+        bool result = true;
 
-        if(root == nullptr)
+        queue<tuple<TreeNode*,long,long>> data;
+
+        if(root)
         {
-            return true;
+            data.push(make_tuple(root,LONG_MIN,LONG_MAX));
         }
-        else
+        
+        while(!data.empty())
         {
-            result = check_left(root->left,root->val) && check_right(root->right,root->val);
-            return result && isValidBST(root->left) && isValidBST(root->right);
+            auto [elm,left_limit,right_limit] = data.front();
+            data.pop();
+
+            if((left_limit >= elm->val) || (right_limit <= elm->val))
+            {
+                return false;
+            } 
+
+            if(elm->left)
+            {
+                data.push(make_tuple(elm->left,left_limit,elm->val));
+            }
+
+            if(elm->right)
+            {
+                data.push(make_tuple(elm->right,elm->val,right_limit));
+            }
         }
+        return true;
         
         
     }
