@@ -13,40 +13,30 @@
 class Solution {
 public:
 
+    int dfs(TreeNode* root,int &k)
+    {
+        if(!root)
+            return -1;
+
+        
+        int left = dfs(root->left,k);
+        if(left != -1) return left;
+        
+        k--;
+        if(k == 0)
+        {
+            return root->val;
+        }
+        
+        
+        return dfs(root->right,k);
+       
+        return -1;
+        
+    }
+
 
     int kthSmallest(TreeNode* root, int k) {
-        vector<int> values;
-
-        stack<TreeNode*> data;
-
-        if(root)
-        {
-            data.push(root);
-        }
-
-        while(!data.empty())
-        {
-            auto elm = data.top();
-            data.pop();
-
-            values.push_back(elm->val);
-
-            if(elm->right)
-            {
-                data.push(elm->right);
-            }
-
-            if(elm->left)
-            {
-                data.push(elm->left);
-            }
-
-
-        }
-
-        sort(values.begin(),values.end());
-
-        return values[k - 1];
-
+        return dfs(root,k);
     }
 };
