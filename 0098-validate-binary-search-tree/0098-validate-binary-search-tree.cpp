@@ -9,26 +9,58 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
 class Solution {
 public:
-    bool dfs(TreeNode* node,long lower,long upper)
+
+
+    bool check_left(TreeNode* root,int node_val)
     {
-        
-        if(node == nullptr)
+        if(!root)
+        {
+            return true;
+        }
+        else if(root->val >= node_val)
+        {
+            return false;
+        }
+        else
+        {
+            return check_left(root->left,node_val) && check_left(root->right,node_val);
+        }
+    }
+
+    bool check_right(TreeNode* root,int node_val)
+    {
+        if(!root)
+        {
+            return true;
+        }
+        else if(root->val <= node_val)
+        {
+            return false;
+        }
+        else
+        {
+            return check_right(root->left,node_val) && check_right(root->right,node_val);
+        }
+    }
+
+
+    bool isValidBST(TreeNode* root) {
+
+        bool result;
+
+        if(root == nullptr)
         {
             return true;
         }
         else
         {
-            if((node->val <= lower) || (node->val >= upper))
-            {
-                return false;  
-            }
-            return dfs(node->left,lower,node->val)&&dfs(node->right,node->val,upper); 
-
-        } 
-    }
-    bool isValidBST(TreeNode* root) {
-        return dfs(root,LONG_MIN,LONG_MAX);
+            result = check_left(root->left,root->val) && check_right(root->right,root->val);
+            return result && isValidBST(root->left) && isValidBST(root->right);
+        }
+        
+        
     }
 };
