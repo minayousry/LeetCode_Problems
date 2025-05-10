@@ -11,25 +11,31 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-
-        while(root)
+        if(!p || !q)
         {
-            if((p->val < root->val) && (q->val < root->val))
-            {
-                root = root->left;
-            }
-            else if((p->val > root->val) && (q->val > root->val))
-            {
-                root = root->right;
-            }
-            else
-            {
-                return root;
-            }
+            return root;
         }
+        else
+        {
+            TreeNode* curr = root;
 
-        return root;
-        
-        
+            while(curr != nullptr)
+            {
+            
+                if((p->val > curr->val) && (q->val > curr->val))
+                {
+                    curr = curr->right;
+                }
+                else if((p->val < curr->val) && (q->val < curr->val))
+                {
+                    curr = curr->left; 
+                }
+                else
+                {
+                    return curr;
+                }
+            }
+            return nullptr;
+        }
     }
 };
