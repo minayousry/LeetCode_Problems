@@ -50,7 +50,7 @@ public:
         if(isEmpty())
             return -1;
 
-        return cqueue.data[cqueue.tail - 1 % cqueue.size];
+        return cqueue.data[(cqueue.tail - 1 + cqueue.size) % cqueue.size];
     }
     
     bool isEmpty() {
