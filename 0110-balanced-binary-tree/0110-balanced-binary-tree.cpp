@@ -12,33 +12,25 @@
 class Solution {
 public:
 
-    pair<bool,int>  getMaxHeight(TreeNode* root)
+    pair<bool,int> checkbalanced(TreeNode* root)
     {
-        pair<bool,int> result;
-
-        if(root == nullptr)
+        bool result;
+        if(!root)
         {
-            result.first = true;
-            result.second = 0;
-            return result;    
+            return {true,0};
         }
+        else
+        {
+            auto left = checkbalanced(root->left);
+            auto right = checkbalanced(root->right);
 
-        pair<bool,int> lhs = getMaxHeight(root->left);
-        pair<bool,int> rhs = getMaxHeight(root->right);
-        
-        bool balanced = lhs.first && rhs.first && (abs(lhs.second - rhs.second) <= 1U);
-        int height = 1 + max(lhs.second,rhs.second);
-
-        result.first = balanced;
-        result.second = height;
-
-        return result;         
-
+            int diff = abs(left.second - right.second);
+            result = left.first && right.first && (diff < 2);
+            return {result,1 + max(left.second,right.second)};
+        }
     }
 
     bool isBalanced(TreeNode* root) {
-
-        return getMaxHeight(root).first;
-        
-    }
+        return checkbalanced(root).first;
+;    }
 };
