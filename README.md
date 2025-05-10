@@ -31,6 +31,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0724-find-pivot-index](https://github.com/minayousry/LeetCode_Problems/tree/master/0724-find-pivot-index) |
 | [0739-daily-temperatures](https://github.com/minayousry/LeetCode_Problems/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/minayousry/LeetCode_Problems/tree/master/0792-binary-search) |
+| [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
 | [0883-car-fleet](https://github.com/minayousry/LeetCode_Problems/tree/master/0883-car-fleet) |
 | [0907-koko-eating-bananas](https://github.com/minayousry/LeetCode_Problems/tree/master/0907-koko-eating-bananas) |
 | [1127-last-stone-weight](https://github.com/minayousry/LeetCode_Problems/tree/master/1127-last-stone-weight) |
@@ -183,6 +184,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0143-reorder-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0143-reorder-list) |
 | [0146-lru-cache](https://github.com/minayousry/LeetCode_Problems/tree/master/0146-lru-cache) |
 | [0206-reverse-linked-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0206-reverse-linked-list) |
+| [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
 ## Two Pointers
 |  |
 | ------- |
@@ -213,6 +215,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/minayousry/LeetCode_Problems/tree/master/0211-design-add-and-search-words-data-structure) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
+| [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
 ## Doubly-Linked List
 |  |
 | ------- |
@@ -326,6 +329,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0387-first-unique-character-in-a-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0387-first-unique-character-in-a-string) |
+| [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
 ## Simulation
 |  |
 | ------- |
