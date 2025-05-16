@@ -43,16 +43,12 @@ public:
 
         while(i < word.size())
         {
-            if(curr->data.size() == 0)
+            if (word[i] != '.')
             {
-                return false;
-            }
-            else if( (word[i] != '.') && (curr->data.find(word[i]) == curr->data.end()) )
-            {
-                return false;
-            }
-            else if((word[i] != '.') && (curr->data.find(word[i]) != curr->data.end()))
-            {
+                if (curr->data.find(word[i]) == curr->data.end())
+                {
+                    return false;
+                }
                 curr = curr->data[word[i]];
                 i++;
             }
