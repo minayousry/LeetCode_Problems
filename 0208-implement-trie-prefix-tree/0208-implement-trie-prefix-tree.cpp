@@ -1,91 +1,69 @@
 struct Node
 {
-    Node* children[26];
-    bool end_of_w;
+    unordered_map<char,Node*> data;
+    bool end;
 
     Node()
     {
-        for(int i=0;i<26;i++)
-        {
-            children[i] = nullptr;
-        }
-        end_of_w = false;
+        end = false;
     }
-
-
 };
+
 
 class Trie {
 public:
-
-    Node root;
+    Node* dict;
     Trie() {
-
+        dict = new Node();
+        
     }
     
     void insert(string word) {
-        Node* current = &root;
-        int index;
+        Node* curr = dict;
 
-        for(auto &c:word)
+        for(int i=0;i<word.size();++i)
         {
-            index = c - 'a';
-            if(current->children[index] == nullptr)
+            if(curr->data.find(word[i]) == curr->data.end())
             {
-                current->children[index] = new Node;    
+                curr->data[word[i]] = new Node();
             }
-            current = current->children[index];
-            
+            curr = curr->data[word[i]];
         }
-        current->end_of_w = true;
+        curr->end = true;
     }
     
     bool search(string word) {
-        Node* current = &root;
         bool result = true;
-        int index;
+        Node* curr = dict;
 
-        for(auto &c:word)
+        int i = 0;
+
+        while((i < word.size()) && (curr->data.find(word[i]) != curr->data.end()))
         {
-            index = c - 'a';
-            if(current->children[index] != nullptr)
-            {
-                current = current->children[index];
-            }
-            else
-            {
-                result = false;
-                break;
-            }
+            curr = curr->data[word[i]];
+            i++;
         }
 
-        return (result && current->end_of_w);
+        result = (i == word.size()) && (curr->end == true);
 
-
-
+        return result;
     }
     
     bool startsWith(string prefix) {
-        Node* current = &root;
         bool result = true;
-        int index;
+        Node* curr = dict;
 
-        for(auto &c:prefix)
+        int i = 0;
+
+        while((i < prefix.size()) && (curr->data.find(prefix[i]) != curr->data.end()))
         {
-            index = c - 'a';
-            if(current->children[index] != nullptr)
-            {
-                current = current->children[index];
-            }
-            else
-            {
-                result = false;
-                break;
-            }
+            curr = curr->data[prefix[i]];
+            i++;
         }
 
+        result = (i == prefix.size());
+
         return result;
-            
     }
 };
 
