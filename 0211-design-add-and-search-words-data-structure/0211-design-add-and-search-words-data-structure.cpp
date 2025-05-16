@@ -1,89 +1,81 @@
 struct Node
 {
-    Node* children[26];
-    bool end_of_w;
+    unordered_map<char,Node*> data;
+    bool end;
 
     Node()
     {
-        for(int i=0;i<26;i++)
-        {
-            children[i] = nullptr;
-        }
-        end_of_w = false;
-    }
-
-    ~Node()
-    {
-        for(int i=0;i<26;i++)
-        {
-            delete children[i];
-        }
+        end = false;
     }
 };
 
+
 class WordDictionary {
 public:
-    Node tree_root;
+    Node* dict;
+
     WordDictionary() {
-        
+        dict = new Node();
     }
     
     void addWord(string word) {
-        Node* current = &tree_root;
-        int index;
+        Node* curr = dict;
 
-        for(auto &c:word)
+        for(int i=0;i<word.size();++i)
         {
-            index = c - 'a';
-            if(current->children[index] == nullptr)
+            if(curr->data.find(word[i]) == curr->data.end())
             {
-                current->children[index] = new Node;    
+                curr->data[word[i]] = new Node();
             }
-            current = current->children[index];
-            
+            curr = curr->data[word[i]];
         }
-        current->end_of_w = true;
+        curr->end = true;
     }
 
-    bool dfs(string &word,int start_index,Node* root)
-    {
-        Node* current = root;
-        bool result = true;
-        int index;
 
-        for(int i=start_index;i<word.size();++i)
+
+    bool dfs(string &word,int index,Node* root)
+    {
+        bool result = true;
+        Node* curr = root;
+
+        int i = index;
+
+        while(i < word.size())
         {
-            if(word[i] == '.')
-            {   
-                for(int j=0;j<26;++j)
+            if(curr->data.size() == 0)
+            {
+                return false;
+            }
+            else if( (word[i] != '.') && (curr->data.find(word[i]) == curr->data.end()) )
+            {
+                return false;
+            }
+            else if((word[i] != '.') && (curr->data.find(word[i]) != curr->data.end()))
+            {
+                curr = curr->data[word[i]];
+                i++;
+            }
+            else
+            {
+                for(auto &pair:curr->data)
                 {
-                    if((current->children[j] != nullptr) && dfs(word,i+1,current->children[j]))
+                    if(dfs(word,i+1,pair.second))
                     {
                         return true;
                     }
                 }
                 return false;
             }
-            else
-            {
-                index = word[i] - 'a';
 
-                if(current->children[index] != nullptr)
-                {
-                    current = current->children[index];
-                }
-                else
-                {
-                    result = false;
-                    break;
-                }
-            }
         }
-        return (result && current->end_of_w);
+
+        return  curr->end == true;
     }
     
     bool search(string word) {
-        return dfs(word,0,&tree_root);
+        
+        return dfs(word,0,dict);
     }
 };
 
@@ -93,4 +85,3 @@ public:
  * obj->addWord(word);
  * bool param_2 = obj->search(word);
  */
-
