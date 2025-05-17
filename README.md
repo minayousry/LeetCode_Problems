@@ -34,6 +34,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
 | [0883-car-fleet](https://github.com/minayousry/LeetCode_Problems/tree/master/0883-car-fleet) |
 | [0907-koko-eating-bananas](https://github.com/minayousry/LeetCode_Problems/tree/master/0907-koko-eating-bananas) |
+| [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
 | [1127-last-stone-weight](https://github.com/minayousry/LeetCode_Problems/tree/master/1127-last-stone-weight) |
 ## Hash Table
 |  |
@@ -79,6 +80,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
 | [0883-car-fleet](https://github.com/minayousry/LeetCode_Problems/tree/master/0883-car-fleet) |
+| [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -86,12 +88,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0023-merge-k-sorted-lists](https://github.com/minayousry/LeetCode_Problems/tree/master/0023-merge-k-sorted-lists) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/minayousry/LeetCode_Problems/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
+| [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
 | [0023-merge-k-sorted-lists](https://github.com/minayousry/LeetCode_Problems/tree/master/0023-merge-k-sorted-lists) |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
+| [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
 | [1127-last-stone-weight](https://github.com/minayousry/LeetCode_Problems/tree/master/1127-last-stone-weight) |
 ## Bucket Sort
 |  |
@@ -106,6 +110,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
+| [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -124,6 +129,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0150-evaluate-reverse-polish-notation](https://github.com/minayousry/LeetCode_Problems/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0367-valid-perfect-square](https://github.com/minayousry/LeetCode_Problems/tree/master/0367-valid-perfect-square) |
 | [0412-fizz-buzz](https://github.com/minayousry/LeetCode_Problems/tree/master/0412-fizz-buzz) |
+| [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
 ## Stack
 |  |
 | ------- |
@@ -354,4 +360,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/minayousry/LeetCode_Problems/tree/master/0211-design-add-and-search-words-data-structure) |
+## Geometry
+|  |
+| ------- |
+| [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
 <!---LeetCode Topics End-->
