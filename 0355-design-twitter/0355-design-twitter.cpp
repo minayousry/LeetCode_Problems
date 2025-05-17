@@ -15,19 +15,22 @@ public:
     vector<int> getNewsFeed(int userId) {
         vector<int> news_feed;
 
-        priority_queue<pair<int,int>> latest_posts;
+        priority_queue<tuple<int,int,int,int>> latest_posts;
 
         unordered_set<int> users = following_data[userId];
         users.insert(userId);
 
+
         for(auto it = users.begin();it != users.end();++it)
         {
-            if(user_tweets.find(*it) != user_tweets.end())
+            if(user_tweets.find(*it) != user_tweets.end() && !user_tweets[*it].empty())
             {
-                for(const auto &user_tweet_data:user_tweets[*it])
-                {
-                    latest_posts.push(user_tweet_data);
-                }
+                int last_index = user_tweets[*it].size() - 1;
+                int user_id = *it;
+                int time = user_tweets[*it][last_index].first;
+                int user_tweet_id = user_tweets[*it][last_index].second;
+
+                latest_posts.emplace(make_tuple(time,user_tweet_id,user_id,last_index));
             }
         }
 
@@ -35,9 +38,18 @@ public:
         int latest_tweed_id;
         while(!latest_posts.empty() && counter < 10)
         {
-            latest_tweed_id = latest_posts.top().second;
+            auto top_entry = latest_posts.top();
             latest_posts.pop();
-            news_feed.emplace_back(latest_tweed_id);
+
+            auto [time, user_tweet_id, user_id, index] = top_entry;
+
+            news_feed.push_back(user_tweet_id);
+
+            if(index > 0)
+            {
+                auto &[new_time_tweet,tweet_id] = user_tweets[user_id][index - 1];
+                latest_posts.emplace(make_tuple(new_time_tweet,tweet_id,user_id,index - 1));
+            }
             counter++;
         }
 
