@@ -1,33 +1,33 @@
 class KthLargest {
 public:
-    multiset<int> data;
+    priority_queue<int,vector<int>,std::greater<int>> data;
     int limit;
 
     KthLargest(int k, vector<int>& nums) {
         limit = k;
         for(const auto &num:nums)
         {
-            data.insert(num);
-        }    
+            data.push(num);
+        } 
+
+        int pop_limit = data.size() - limit;
+        int count = 0;   
+
+        while(!data.empty() && (count < pop_limit))
+        {
+            data.pop();
+            count++;
+        }
     }
     
     int add(int val) {
+        data.push(val);
         
-        int result = -1;
-        data.insert(val);
-        int count = 1;
-
-        for(auto it = data.rbegin();it != data.rend();++it)
-        {
-            if(count == limit)
-            {
-                result = *it;
-                break;
-            }
-            count++;
+        if (data.size() > limit) {
+            data.pop();
         }
+        return data.top();
 
-        return result;
     }
 };
 
