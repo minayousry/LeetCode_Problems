@@ -53,6 +53,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0217-contains-duplicate](https://github.com/minayousry/LeetCode_Problems/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/minayousry/LeetCode_Problems/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
+| [0355-design-twitter](https://github.com/minayousry/LeetCode_Problems/tree/master/0355-design-twitter) |
 | [0387-first-unique-character-in-a-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0387-first-unique-character-in-a-string) |
 | [0424-longest-repeating-character-replacement](https://github.com/minayousry/LeetCode_Problems/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0567-permutation-in-string) |
@@ -101,6 +102,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0023-merge-k-sorted-lists](https://github.com/minayousry/LeetCode_Problems/tree/master/0023-merge-k-sorted-lists) |
 | [0215-kth-largest-element-in-an-array](https://github.com/minayousry/LeetCode_Problems/tree/master/0215-kth-largest-element-in-an-array) |
 | [0347-top-k-frequent-elements](https://github.com/minayousry/LeetCode_Problems/tree/master/0347-top-k-frequent-elements) |
+| [0355-design-twitter](https://github.com/minayousry/LeetCode_Problems/tree/master/0355-design-twitter) |
 | [0621-task-scheduler](https://github.com/minayousry/LeetCode_Problems/tree/master/0621-task-scheduler) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
 | [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
@@ -201,6 +203,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0143-reorder-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0143-reorder-list) |
 | [0146-lru-cache](https://github.com/minayousry/LeetCode_Problems/tree/master/0146-lru-cache) |
 | [0206-reverse-linked-list](https://github.com/minayousry/LeetCode_Problems/tree/master/0206-reverse-linked-list) |
+| [0355-design-twitter](https://github.com/minayousry/LeetCode_Problems/tree/master/0355-design-twitter) |
 | [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
 ## Two Pointers
 |  |
@@ -231,6 +234,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0155-min-stack](https://github.com/minayousry/LeetCode_Problems/tree/master/0155-min-stack) |
 | [0208-implement-trie-prefix-tree](https://github.com/minayousry/LeetCode_Problems/tree/master/0208-implement-trie-prefix-tree) |
 | [0211-design-add-and-search-words-data-structure](https://github.com/minayousry/LeetCode_Problems/tree/master/0211-design-add-and-search-words-data-structure) |
+| [0355-design-twitter](https://github.com/minayousry/LeetCode_Problems/tree/master/0355-design-twitter) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
 | [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
 ## Doubly-Linked List
