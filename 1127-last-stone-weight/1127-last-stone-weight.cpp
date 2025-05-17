@@ -1,44 +1,31 @@
 class Solution {
 public:
-    int lastStoneWeight(vector<int>& stones)
-    {
-        int last_stone = 0;
-        
-        if(stones.size() == 1)
+    int lastStoneWeight(vector<int>& stones) {
+        priority_queue<int> pack;
+        int result = -1;
+
+        for(const auto& stone:stones)
         {
-            last_stone = stones[0];
+            pack.push(stone);
         }
-        else
+
+        int stone1,stone2;
+
+        while(!pack.empty())
         {
-            priority_queue<int> stones_weight;
-            
-            for(int stone:stones)
+            stone1 = pack.top();
+            pack.pop();
+
+            if(!pack.empty())
             {
-                stones_weight.push(stone);
-            }
-            
-            int stonex,stoney;
-            while(!stones_weight.empty())
-            {
-                stonex = stones_weight.top();
-                stones_weight.pop();
-                stoney = stones_weight.top();
-                stones_weight.pop(); 
-                
-                if(stonex != stoney)
-                {
-                   stones_weight.push(stonex - stoney);
-                }
-                
-                if(stones_weight.size() == 1)
-                {
-                    last_stone = stones_weight.top();
-                    stones_weight.pop(); 
-                    break;
-                }
-                
+                stone2 = pack.top();
+                pack.pop();
+
+                int smash = abs(stone1 - stone2);
+                pack.push(smash);   
             }
         }
-        return last_stone;
+
+        return stone1;
     }
 };
