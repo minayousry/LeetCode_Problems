@@ -8,7 +8,7 @@ public:
             result.push_back(subset);
             return;
         }
-        else if((index >= candidates.size()) || (target < 0))
+        else if((target < 0) || (index >= candidates.size()))
         {
             return;
         }
@@ -29,7 +29,6 @@ public:
 
         vector<int> subset;
         
-        int sum = 0;
 
         backTrack(candidates,subset,0,target,res);
         return res;
