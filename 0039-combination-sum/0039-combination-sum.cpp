@@ -1,11 +1,11 @@
 class Solution {
 public:
 
-    void backTrack(vector<int>& candidates,vector<int> &subset,int index, int target,vector<vector<int>> &result)
+    void backTrack(vector<int>& candidates,vector<int> &subset,int index, int target,set<vector<int>> &result)
     {
         if(target == 0)
         {
-            result.push_back(subset);
+            result.insert(subset);
             return;
         }
         else if((target < 0) || (index >= candidates.size()))
@@ -26,11 +26,18 @@ public:
 
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         vector<vector<int>> res;
+        set<vector<int>> output;
+        
 
         vector<int> subset;
         
 
-        backTrack(candidates,subset,0,target,res);
+        backTrack(candidates,subset,0,target,output);
+
+        for(auto &arr:output)
+        {
+            res.emplace_back(arr);
+        }
         return res;
     }
 };
