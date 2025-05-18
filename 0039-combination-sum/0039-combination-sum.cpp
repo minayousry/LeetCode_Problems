@@ -1,25 +1,25 @@
 class Solution {
 public:
 
-    void backTrack(vector<int>& candidates,vector<int> &subset,int index,int sum, int target,vector<vector<int>> &result)
+    void backTrack(vector<int>& candidates,vector<int> &subset,int index, int target,vector<vector<int>> &result)
     {
-        if(sum == target)
+        if(target == 0)
         {
             result.push_back(subset);
             return;
         }
-        else if((index >= candidates.size()) || (sum > target))
+        else if((index >= candidates.size()) || (target < 0))
         {
             return;
         }
 
         //Include the element
         subset.push_back(candidates[index]);
-        backTrack(candidates,subset,index,sum + candidates[index],target,result);
+        backTrack(candidates,subset,index,target - candidates[index],result);
         
         //exclude the element
         subset.pop_back();
-        backTrack(candidates,subset,index + 1,sum,target,result);
+        backTrack(candidates,subset,index + 1,target,result);
 
 
     }
@@ -31,7 +31,7 @@ public:
         
         int sum = 0;
 
-        backTrack(candidates,subset,0,sum,target,res);
+        backTrack(candidates,subset,0,target,res);
         return res;
     }
 };
