@@ -1,11 +1,12 @@
 class Solution {
 public:
+    vector<vector<int>> directions = {{1,0,},{-1,0},{0,1},{0,-1}};
 
-    int isIsland(vector<vector<int>>& grid,vector<vector<bool>> &visited,int row,int col)
+    int getMaxIslands(vector<vector<int>>& grid,vector<vector<bool>> &visited,int row,int col)
     {
         int max_islands = 1;
         queue<pair<int,int>> islands;
-        vector<vector<int>> directions = {{1,0,},{-1,0},{0,1},{0,-1}};
+        
 
         islands.push(make_pair(row,col));
 
@@ -47,9 +48,8 @@ public:
             for(int j=0;j<grid[0].size();++j)
             {
                 if (grid[i][j] == 1 && !visited[i][j]) {
-                    islands = isIsland(grid, visited, i, j); 
+                    islands = getMaxIslands(grid, visited, i, j); 
                     max_no = max(max_no,islands);
-                    
                 }
             
             }
