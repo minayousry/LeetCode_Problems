@@ -3,14 +3,14 @@ public:
     
     bool isIsland(vector<vector<char>>& grid,vector<vector<bool>> &visited,int row,int col)
     {
-        queue<pair<int,int>> islands;
+        stack<pair<int,int>> islands;
         vector<vector<int>> directions = {{1,0,},{-1,0},{0,1},{0,-1}};
 
         islands.push(make_pair(row,col));
 
         while(!islands.empty())
         {
-            pair<int,int> island = islands.front();
+            pair<int,int> island = islands.top();
             visited[row][col] = true;
             islands.pop();    
 
