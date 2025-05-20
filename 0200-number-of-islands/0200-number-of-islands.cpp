@@ -1,85 +1,56 @@
 class Solution {
 public:
     
-    void BFS(vector<vector<char>>& grid,pair<int,int> element,vector<vector<bool>> &visited)
+    bool isIsland(vector<vector<char>>& grid,vector<vector<bool>> &visited,int row,int col)
     {
-        int m = grid.size();
-        int n = grid[0].size();
-        
-        pair<int,int> front_element;
-        queue<pair<int,int>> elements;
-        
-        char directions_horizontal[2] = {1,-1};
-        char directions_vertical[2]   = {1,-1};
-        
-        elements.push(element);
-        visited[element.first][element.second] = true;
-        
-        while(!elements.empty())
+        queue<pair<int,int>> islands;
+        vector<vector<int>> directions = {{1,0,},{-1,0},{0,1},{0,-1}};
+
+        islands.push(make_pair(row,col));
+
+        while(!islands.empty())
         {
-           front_element = elements.front();
-           elements.pop();
-            
-            int new_index = 0;
-            
-            for(int v:directions_vertical)
+            pair<int,int> island = islands.front();
+            visited[row][col] = true;
+            islands.pop();    
+
+            for(int i=0;i<4;i++)
             {
-                new_index = front_element.first+v;
+                int new_row = island.first + directions[i][0];
+                int new_col = island.second + directions[i][1];
                 
-                if( ((new_index >= 0) && (new_index < m)) &&
-                    (grid[new_index][front_element.second] == '1') &&
-                    (visited[new_index][front_element.second] == false)
-                  )
+                if(new_row >=0 && new_row < grid.size() && new_col >= 0 && new_col < grid[0].size() && 
+                    (visited[new_row][new_col] == false) && grid[new_row][new_col] == '1')
                 {
-                    elements.push(make_pair(new_index,front_element.second));
-                    visited[new_index][front_element.second] = true;
+                    islands.push(make_pair(new_row,new_col));
+                    visited[new_row][new_col] = true;
                 }
-            }
-            
-            for(int h:directions_horizontal)
-            {
-                new_index = front_element.second+h;
                 
-                if( ((new_index >= 0) && (new_index < n)) &&
-                    (grid[front_element.first][new_index] == '1') &&
-                    (visited[front_element.first][new_index] == false)
-                  )
-                {
-                    elements.push(make_pair(front_element.first,new_index));
-                    visited[front_element.first][new_index] = true;
-                }
             }
+
         }
-        
-        
-        
+        return true;
     }
+
+    int numIslands(vector<vector<char>>& grid) {
         
-    int numIslands(vector<vector<char>>& grid)
-    {
-        int m = grid.size();
-        int n = grid[0].size();
-        int no_of_islands = 0;
-        
-        vector<vector<bool>> visited(m,vector<bool> (n, false)); 
-        
-        for(int i=0;i<m;++i)
+        int islands = 0;
+
+        vector<vector<bool>> visited(grid.size(),vector<bool>(grid[0].size(),false));
+
+        for(int i=0;i<grid.size();++i)
         {
-            for(int j=0;j<n;++j)
+            for(int j=0;j<grid[0].size();++j)
             {
-                if((grid[i][j] == '1') && (visited[i][j] == false))
-                {
-                    pair<int,int> element = make_pair(i,j);
-                    BFS(grid,element,visited);
-                    no_of_islands++;
+                if (grid[i][j] == '1' && !visited[i][j]) {
+                    if (isIsland(grid, visited, i, j)) {
+                        islands++;
+                    }
                 }
-                
+            
             }
         }
-        
-        return no_of_islands;
-        
-        
-        
+
+        return islands;      
     }
 };
