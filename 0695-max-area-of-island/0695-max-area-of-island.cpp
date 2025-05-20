@@ -5,14 +5,14 @@ public:
     int getMaxIslands(vector<vector<int>>& grid,int row,int col)
     {
         int max_islands = 1;
-        queue<pair<int,int>> islands;
+        stack<pair<int,int>> islands;
         
 
         islands.push(make_pair(row,col));
 
         while(!islands.empty())
         {
-            pair<int,int> island = islands.front();
+            pair<int,int> island = islands.top();
 
             grid[row][col] = 0;
             islands.pop();    
