@@ -15,7 +15,6 @@ public:
 
         while(l < r)
         {
-            cout<<l;
             while(l < r && !isalnum(s[l]))
             {
                 l++;
