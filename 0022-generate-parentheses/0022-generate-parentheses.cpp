@@ -1,37 +1,33 @@
 class Solution {
 public:
-    
-    void backtrack(vector<string> &stack,string data,int open_cnt,int closed_cnt,int n)
-    {
 
-        if((closed_cnt == open_cnt) && (open_cnt == n))
+    void backtrack(vector<string> &result,string data,int open_brackets_cnt,int closed_brackets_cnt,int &n)
+    {
+        if(open_brackets_cnt == n && closed_brackets_cnt == n)
         {
-            stack.push_back(data);
+            result.push_back(data);
             return;
         }
 
-        if(open_cnt > closed_cnt)
+        if(open_brackets_cnt < n)
         {
-            backtrack(stack,data + ")",open_cnt,closed_cnt + 1,n);
+            backtrack(result,data + "(",open_brackets_cnt + 1,closed_brackets_cnt,n);
         }
 
-        if(open_cnt < n)
+        if(closed_brackets_cnt < open_brackets_cnt)
         {
-            backtrack(stack,data + "(",open_cnt + 1,closed_cnt,n);
+            backtrack(result,data + ")",open_brackets_cnt,closed_brackets_cnt + 1,n);
         }
+
     }
 
-    vector<string> generateParenthesis(int n)
-    {
+    vector<string> generateParenthesis(int n) {
         vector<string> result;
-        string data;
 
-        backtrack(result,data,0,0,n);
+        string data = "";
 
-        return result;
+        backtrack(result,data,0,0,n); 
 
-
-
-        
+        return result;   
     }
 };
