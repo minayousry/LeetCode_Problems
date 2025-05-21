@@ -1,63 +1,63 @@
 class Solution {
 public:
-    bool isValid(string s)
-    {
-        stack<char> data;
+    bool isValid(string s) {
         bool result = true;
+        stack<char> brackets;
 
         for(int i=0;i<s.size();++i)
         {
             switch(s[i])
             {
                 case '(':
-                case '[':
                 case '{':
-                    data.push(s[i]);
-                    break;
+                case '[':
+                    brackets.push(s[i]);
+                break;
 
                 case ')':
-                    if((data.size() > 0) && data.top() == '(')
+                    if(!brackets.empty() && brackets.top() == '(')
                     {
-                        data.pop();
+                        brackets.pop();
                     }
                     else
                     {
                         return false;
                     }
-                    break;
-                
-                case '}':
-                    if((data.size() > 0) && (data.top() == '{'))
-                    {
-                        data.pop();
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                    break;
-                
-                case ']':
-                    if((data.size() > 0) && (data.top() == '['))
-                    {
-                        data.pop();
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                    break;
-                
-                default:
                 break;
-                    
+
+                case '}':
+                    if(!brackets.empty() && brackets.top() == '{')
+                    {
+                        brackets.pop();
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                break;
+
+                case ']':
+                    if(!brackets.empty() && brackets.top() == '[')
+                    {
+                        brackets.pop();
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                break;
             }
+
+            
+            
         }
-        if(data.size() > 0)
+        if(brackets.empty())
         {
-            result = false;
+            return true;
         }
-        return result;
-        
+        else
+        {
+            return false;
+        }
     }
 };
