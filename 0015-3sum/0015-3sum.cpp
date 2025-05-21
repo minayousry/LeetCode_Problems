@@ -1,63 +1,73 @@
+#include <algorithm>
+#include <map>
+
 class Solution {
 public:
-    
-    vector<vector<int>> threeSum(vector<int>& nums)
-    {
-        vector<vector<int>> total_triplets;
+    vector<vector<int>> threeSum(vector<int>& nums) {
         
-        sort(nums.begin(),nums.end());
+        vector<vector<int>> triplets;
 
-        long int sum;
+        if(nums.size() == 3)
+        {
+            if(nums[0] + nums[1] + nums[2] == 0)
+            {
+                triplets.push_back({nums[0],nums[1],nums[2]});
+
+            }
+            return triplets;
+        }
+
+        std::sort(nums.begin(),nums.end());
+        
+
+        int l = 0;
+        int r = nums.size() - 1;
+
+        int first_num;
+        int second_num;
+        int third_num;
+        int sum;
         
         for(int i=0;i<nums.size() - 2;++i)
         {
-            
-            if((i > 0) && (nums[i - 1] == nums[i]))
-                continue;
-            
-            int first_elm = nums[i];        
-            int left_ptr = i+1;
-            int right_ptr = nums.size() - 1; 
-            
-        
-            
-            
-            while(left_ptr < right_ptr)
+            // Skip duplicates for nums[i]
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+            first_num = nums[i];
+            l = i + 1;
+            r = nums.size() - 1;
+
+            while(l < r)
             {
-                int second_elm = nums[left_ptr];
-                int third_elm = nums[right_ptr];
-                    
-                sum = first_elm + second_elm + third_elm;
-                          
+            
+                second_num = nums[l];
+                third_num = nums[r];
+
+                sum = first_num + second_num + third_num;
+                
+                
                 if(sum == 0)
                 {
-                    total_triplets.push_back({first_elm,second_elm,third_elm});
-                    
-                    do
-                    {
-                        left_ptr++;
-                    }while((left_ptr < right_ptr) && (nums[left_ptr] == nums[left_ptr - 1]));
-                    
-                    do
-                    {
-                        right_ptr--;
-                    }while((right_ptr > left_ptr) && (nums[right_ptr] == nums[right_ptr + 1]));
-                    
+                    triplets.push_back({first_num,second_num,third_num});
+                    l++;
+                    r--;
+                    // Skip duplicates for nums[l] and nums[r]
+                    while (l < r && nums[l] == nums[l - 1]) l++;
+                    while (l < r && nums[r] == nums[r + 1]) r--;
                 }
-                else if(sum < 0)
+                else if(sum > 0)
                 {
-                    left_ptr++;
+                    r--;
                 }
                 else
                 {
-                    right_ptr--;
+                    l++;
                 }
-                
-                
             }
-                
 
         }
-        return total_triplets;
+
+        return triplets;
+
     }
 };
