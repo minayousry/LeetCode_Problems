@@ -1,33 +1,32 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& numbers, int target) 
-    {
-        int left = 0;
-        int right = int(numbers.size()) - 1;
-        vector<int> ans;
-        int sum;
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        
+        vector<int> found_indices;
 
-        while (left < right) {
-            // do some logic here with left and right
-            sum = numbers[left] + numbers[right];
-            if (sum == target)
+        int l = 0;
+        int r = numbers.size() - 1;
+        int sum;
+        while(l < r)
+        {
+            sum = numbers[l] + numbers[r];
+
+            if(sum == target)
             {
-                ans.push_back(left+1);
-                ans.push_back(right+1);
+                found_indices.emplace_back(l + 1);
+                found_indices.emplace_back(r + 1);
                 break;
-                
             }
-            else if(sum > target)
+            if(sum < target)
             {
-                right--;
-            } 
+                l++;
+            }
             else
             {
-                left++;
+                r--;
             }
         }
 
-        return ans;
-        
+        return found_indices;
     }
 };
