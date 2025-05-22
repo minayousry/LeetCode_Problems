@@ -6,12 +6,15 @@ public:
 
         for(int r=0;r<prices.size();++r)
         {
-            if(prices[r] < prices[l])
+            if(prices[r] <= prices[l])
             {
                 l = r;
-                
             }
-            profit = max(profit,prices[r] - prices[l]);
+            else
+            {
+                profit = max(profit,prices[r] - prices[l]);
+            }
+            
             
         }
         return profit;
