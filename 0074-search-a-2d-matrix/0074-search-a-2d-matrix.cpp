@@ -1,41 +1,52 @@
 class Solution {
 public:
-    bool searchMatrix(vector<vector<int>>& matrix, int target)
-    {
-        int start = 0;
-        int end = matrix.size()*matrix[0].size() - 1;
-
-        bool result = false;
-        int mid;
-        int row,col;
-
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
         
+        int start_x = 0;
+        int end_x = matrix.size() - 1;
+        int mid_x;
+        bool is_found = false;
+        int row_size = matrix[0].size() - 1;
 
-        while(start <= end)
+        while(start_x <= end_x)
         {
-            mid = start + (end - start)/2;
+            mid_x = start_x + (end_x - start_x)/2;
 
-            row = mid/matrix[0].size();
-            col = mid%matrix[0].size();
-
-            if(matrix[row][col] < target)
+            if(target >=  matrix[mid_x][0] && target <=  matrix[mid_x][row_size])
             {
-                start = mid + 1;
+                int start_y = 0;
+                int end_y = row_size;
+                int mid_y;
+                while(start_y <= end_y)
+                {
+                    mid_y = start_y + (end_y - start_y)/2;
+
+                    if(matrix[mid_x][mid_y] == target)
+                    {
+                        is_found = true;
+                        break;
+                    }
+                    else if( target < matrix[mid_x][mid_y])
+                    {
+                        end_y = mid_y - 1;
+                    }
+                    else
+                    {
+                        start_y = mid_y + 1;
+                    }
+
+                }
+                break;
             }
-            else if(matrix[row][col] > target)
+            else if(target < matrix[mid_x][0])
             {
-                end = mid - 1;
+                end_x = mid_x - 1;
             }
             else
             {
-                result = true;
-                break;
+                start_x = mid_x + 1;
             }
-            
-
         }
-        return result;
+        return is_found;
     }
-
-
 };
