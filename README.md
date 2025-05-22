@@ -64,6 +64,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0424-longest-repeating-character-replacement](https://github.com/minayousry/LeetCode_Problems/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0567-permutation-in-string) |
 | [0621-task-scheduler](https://github.com/minayousry/LeetCode_Problems/tree/master/0621-task-scheduler) |
+| [1023-time-based-key-value-store](https://github.com/minayousry/LeetCode_Problems/tree/master/1023-time-based-key-value-store) |
 ## String
 |  |
 | ------- |
@@ -81,6 +82,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0412-fizz-buzz](https://github.com/minayousry/LeetCode_Problems/tree/master/0412-fizz-buzz) |
 | [0424-longest-repeating-character-replacement](https://github.com/minayousry/LeetCode_Problems/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/minayousry/LeetCode_Problems/tree/master/0567-permutation-in-string) |
+| [1023-time-based-key-value-store](https://github.com/minayousry/LeetCode_Problems/tree/master/1023-time-based-key-value-store) |
 ## Sorting
 |  |
 | ------- |
@@ -198,6 +200,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0367-valid-perfect-square](https://github.com/minayousry/LeetCode_Problems/tree/master/0367-valid-perfect-square) |
 | [0792-binary-search](https://github.com/minayousry/LeetCode_Problems/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/minayousry/LeetCode_Problems/tree/master/0907-koko-eating-bananas) |
+| [1023-time-based-key-value-store](https://github.com/minayousry/LeetCode_Problems/tree/master/1023-time-based-key-value-store) |
 ## Matrix
 |  |
 | ------- |
@@ -251,6 +254,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0355-design-twitter](https://github.com/minayousry/LeetCode_Problems/tree/master/0355-design-twitter) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/minayousry/LeetCode_Problems/tree/master/0789-kth-largest-element-in-a-stream) |
 | [0860-design-circular-queue](https://github.com/minayousry/LeetCode_Problems/tree/master/0860-design-circular-queue) |
+| [1023-time-based-key-value-store](https://github.com/minayousry/LeetCode_Problems/tree/master/1023-time-based-key-value-store) |
 ## Doubly-Linked List
 |  |
 | ------- |
