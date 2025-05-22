@@ -1,29 +1,25 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        
-        int l,r;
-        l = 0;
-        r = 0;
-        int max_len = 0;
         unordered_map<char,int> dict;
+        int l=0;
+        int r = 0;
 
-        if(s.size() <= 1)
-        {
-            return s.size();
-        }
-
+        int max_substr = 0;
+        
         while(r < s.size())
-        { 
-            if(dict.find(s[r]) != dict.end() && dict[s[r]] >= l)
+        {
+            dict[s[r]]++;
+            
+            while(dict[s[r]] > 1)
             {
-                l = dict[s[r]] + 1;   
+                dict[s[l]]--;
+                l++;
             }
-            max_len = max(max_len, (r - l + 1));
-            dict[s[r]] = r;
+            max_substr = max(max_substr,r - l + 1);
             r++;
         }
-        return max_len;
+        return max_substr;
         
     }
 };
