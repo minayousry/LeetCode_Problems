@@ -1,43 +1,41 @@
 class Solution {
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
-
-        int max_pile = static_cast<int>(*(std::max_element(piles.begin(),piles.end())));
-
-        unsigned long int sum = 0;
-
-        int rate;
-
         int start = 1;
-        int end = max_pile;
+        int end = *max_element(piles.begin(),piles.end());
+        int min_h = end;
 
-        int result = max_pile;
+        int mid;
 
-        while(start<=end)
+        while(start <= end)
         {
-            rate = start + (end - start)/2;
-            
-            sum = 0; 
+            mid = start + (end - start)/2;
+
+            int total_hrs = 0;
+
+
+
             for(auto &pile:piles)
             {
-                sum += (pile + rate - 1) / rate;;
-
+                total_hrs += ceil((static_cast<double>(pile)/mid));
+                if(total_hrs > h)
+                {
+                    break;
+                }
             }
 
-            if(sum <= h)
+            if(total_hrs <= h)
             {
-                result = rate;
-                end = rate - 1;
+                min_h = mid;
+                end = mid - 1;
             }
             else
             {
-                start = rate + 1;
+                start = mid + 1;
             }
-
         }
 
-        return result;
+        return min_h;
 
-        
     }
 };
