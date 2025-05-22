@@ -17,7 +17,7 @@ public:
 
             for(auto &pile:piles)
             {
-                total_hrs += ceil((static_cast<double>(pile)/mid));
+                total_hrs += ((pile + mid - 1)/ mid);
                 if(total_hrs > h)
                 {
                     break;
