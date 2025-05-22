@@ -1,6 +1,6 @@
 class TimeMap {
 public:
-    unordered_map<string, pair<vector<int>,vector<string>>> dict;
+    unordered_map<string, vector<pair<int,string>>> dict;
 
 
     TimeMap() {
@@ -8,8 +8,8 @@ public:
     }
     
     void set(string key, string value, int timestamp) {
-        dict[key].first.push_back(timestamp);
-        dict[key].second.push_back(value);
+        dict[key].push_back({timestamp,value});
+        
     }
     
     string get(string key, int timestamp) {
@@ -20,21 +20,22 @@ public:
         if(it != dict.end())
         {
             int start = 0;
-            int end = dict[key].first.size() - 1;
+            int end = dict[key].size() - 1;
 
             int mid;
+            int mid_val;
             while(start <= end)
             {
                 mid = start + (end - start)/2;
 
-                int mid_val = dict[key].first[mid];
+                mid_val = dict[key][mid].first;
 
                 if(mid_val <= timestamp)
                 {
-                    val = dict[key].second[mid];
+                    val = dict[key][mid].second;
                     start = mid + 1;
                 }
-                else if(mid_val > timestamp)
+                else
                 {
                     end = mid - 1;
                 }
