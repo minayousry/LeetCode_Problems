@@ -11,73 +11,58 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-
-        ListNode result(0);
-
-        ListNode* tail = &result;
-
-        int remaining = 0;
-        int eval = 0;
-
-        while(l1 || l2)
-        {
-            if(l1 && l2)
-            {
-                eval = l1->val + l2->val;
-            }
-            else if(l1)
-            {
-                if(remaining == 0)
-                {   
-                    tail->next = l1;
-                    break;
-                }
-                else
-                {
-                    eval = l1->val + remaining;
-                    remaining = 0;
-                }
-                
-            }
-            else if(l2)
-            {
-                if(remaining == 0)
-                {   
-                    tail->next = l2;
-                    break;
-                }
-                else
-                {
-                    eval = l2->val + remaining;
-                    remaining = 0;
-                }
-            }
-            else
-            {
-                break;
-            }
-            
-
-            tail->next = new ListNode((eval + remaining)%10);
-
-            remaining  = (eval + remaining)/10;
-
-            
-
-            if(l1)
-                l1 = l1->next;
-            if(l2)    
-                l2 = l2->next;
-
-            tail = tail->next;
-        }
-
-        if(remaining > 0)
-        {
-            tail->next = new ListNode(remaining);   
-        }
-
         
-        return result.next;
+        ListNode dummy_node;
+        ListNode* result_list = &dummy_node;
+
+
+        int rem = 0;
+        int sum = 0;
+        int res;
+
+        while(l1 && l2)
+        {
+            
+            sum = (l1->val + l2->val + rem);
+            res = sum % 10;
+            rem = sum / 10;
+
+            result_list->next = new ListNode(res);
+
+            l1 = l1->next;
+            l2 = l2->next;
+            result_list = result_list->next;
+        }
+
+        while(l1)
+        {
+            sum = l1->val + rem;
+            res = sum % 10;
+            rem = sum / 10;
+
+            result_list->next = new ListNode(res);
+            l1 = l1->next;
+            result_list = result_list->next; 
+        }
+
+        while(l2)
+        {
+            sum = l2->val + rem;
+            res = sum % 10;
+            rem = sum / 10;
+
+            result_list->next = new ListNode(res);
+            l2 = l2->next;
+            result_list = result_list->next; 
+        }
+
+        if(rem > 0)
+        {
+            result_list->next = new ListNode(rem);
+        }
+
+        return dummy_node.next;
+            
     }
+    
 };
