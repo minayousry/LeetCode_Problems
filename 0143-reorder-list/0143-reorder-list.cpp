@@ -11,54 +11,24 @@
 class Solution {
 public:
     void reorderList(ListNode* head) {
+        vector<ListNode*> node_list;
 
-        stack<ListNode*> nodes;
-        ListNode result(0);
-        ListNode* result_head = &result;
-
-
-        ListNode* loop = head;
-
-        while(loop)
+        while(head)
         {
-            nodes.push(loop);
-            loop = loop->next;
-        }
-        
-        int no_nodes = nodes.size();
-
-        if(no_nodes<=2)
-        {
-            return;
+            node_list.emplace_back(head);
+            head = head->next;
         }
 
-        loop = head;
-        int count = 0;
+        int half_nlist_size = node_list.size()/2;   
+        int last_index = node_list.size() - 1;  
 
-        loop = head;
-
-        while(count < no_nodes)
+        for(int i=0;i < half_nlist_size;++i)
         {
-            result_head->next = loop;
-            loop = loop->next;
-            result_head = result_head->next;
-
-            count++;
-
-            if(count >= no_nodes)
-            {
-                break;
-            }
-
-            result_head->next = nodes.top();
-            nodes.pop();
-            result_head = result_head->next;
-            count++;
-            
-
+            node_list[i]->next = node_list[last_index - i];
+            node_list[last_index - i]->next = node_list[i + 1];
         }
+        node_list[half_nlist_size]->next = nullptr;
 
-        result_head->next = nullptr;
-        
+        head = node_list[0];
     }
 };
