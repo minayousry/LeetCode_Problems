@@ -8,13 +8,11 @@
  */
 class Solution {
 public:
-    bool hasCycle(ListNode *head) {
-        
-        bool result = false;
-        ListNode* slow = head;
-        ListNode* fast = head;
 
-        
+    bool hasCycle(ListNode *head) {
+        ListNode *slow = head;
+        ListNode *fast = head;
+
         while(fast && fast->next)
         {
             slow = slow->next;
@@ -22,10 +20,10 @@ public:
 
             if(slow == fast)
             {
-                result = true;
-                break;
+                return true;
             }
         }
-        return result;
+        return false;
+          
     }
 };
