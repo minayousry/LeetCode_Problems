@@ -1,46 +1,33 @@
 class Solution {
 public:
+
     bool checkInclusion(string s1, string s2) {
+        if (s1.size() > s2.size()) return false;
 
-        if (s1.length() > s2.length()) {
-            return false;
-        }
-        
-        int dict1[26] = {0};
-        int dict2[26] = {0};
-        bool result = false;
+        vector<int> s1_seen(26, 0);
+        vector<int> s2_seen(26, 0);
 
-        for(int i =0;i<s1.size();++i)
-        {
-            dict1[s1[i] - 'a']++;
+        for (char c : s1) {
+            s1_seen[c - 'a']++;
         }
 
         int l = 0;
-        int window_size = 0;
 
-        for(int r = 0;r<s2.size();++r)
-        {
-            dict2[s2[r] - 'a']++;
+        for (int r = 0; r < s2.size(); ++r) {
+            
+            s2_seen[s2[r] - 'a']++;
 
-            window_size = r - l + 1;
+            // If window size > s1.size(), shrink from left
+            if (r - l + 1 > s1.size()) {
+                s2_seen[s2[l] - 'a']--;
+                l++;
+            }
 
-            if(window_size == s1.size())
-            {
-                if(equal(begin(dict1),end(dict1),begin(dict2)))
-                {
-                    result = true;
-                    break;
-                }
-                else
-                {
-                    dict2[s2[l] - 'a']--;
-                    l++;
-                }
+            if ((r - l + 1) == s1.size() && s1_seen == s2_seen) {
+                return true;
             }
         }
 
-        return result;
-
-
+        return false;
     }
 };
