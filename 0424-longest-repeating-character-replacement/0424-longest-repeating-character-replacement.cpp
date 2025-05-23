@@ -20,15 +20,14 @@ public:
             max_freq = *max_element(freq.begin(),freq.end());
 
 
-            if((window_len - max_freq) > k)
+            while((window_len - max_freq) > k)
             {
                 freq[s[l] - 'A']--;
                 l++;
+                window_len = r - l + 1;
             }
-            else
-            {
-                longest_substr = max(longest_substr,window_len);
-            }
+            
+            longest_substr = max(longest_substr,window_len);
             r++;
         }
         return longest_substr;
