@@ -1,35 +1,36 @@
 class Solution {
 public:
+
     int characterReplacement(string s, int k) {
-        int dict[26] = {0};
-        int result = 0;
-        int l = 0;
+        
+        vector<int> freq(26,0);
+
+        int longest_substr = 0;
+
         int r = 0;
-        int window_size = 0;
-        int max_occurance = 0;
-        int no_of_replacements = 0;
+        int l = 0;
+        int max_freq;
+        int window_len;
 
-        for(r=0;r<s.size();++r)
+        while( r < s.size())
         {
-            dict[s[r] - 'A']++;
+            freq[s[r] - 'A']++;
 
-            window_size = r - l + 1;
-            max_occurance = *(std::max_element(dict,dict+26));
-            no_of_replacements = window_size - max_occurance;
-                        
-            if(no_of_replacements <= k)
+            window_len = r - l + 1;
+            max_freq = *max_element(freq.begin(),freq.end());
+
+
+            if((window_len - max_freq) > k)
             {
-                result = max(result,window_size);
+                freq[s[l] - 'A']--;
+                l++;
             }
             else
             {
-                //Remove the leftmost character from the window
-                dict[s[l] - 'A']--;
-                l++;
+                longest_substr = max(longest_substr,window_len);
             }
+            r++;
         }
-
-        return result;
-
+        return longest_substr;
     }
 };
