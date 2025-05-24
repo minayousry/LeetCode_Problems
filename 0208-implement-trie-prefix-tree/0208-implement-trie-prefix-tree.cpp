@@ -1,69 +1,81 @@
 struct Node
 {
     unordered_map<char,Node*> data;
-    bool end;
+    bool is_end;
 
     Node()
     {
-        end = false;
+        is_end = false; 
     }
+    
 };
-
 
 class Trie {
 public:
-    Node* dict;
+    Node dummy_node;
+    Node* tree;
+
     Trie() {
-        dict = new Node();
-        
+        tree = &dummy_node;   
     }
     
     void insert(string word) {
-        Node* curr = dict;
+        
+        Node* current = tree;
+        Node* prev = nullptr;
+        int index = 0;
 
-        for(int i=0;i<word.size();++i)
+        while(current != nullptr && index < word.size())
         {
-            if(curr->data.find(word[i]) == curr->data.end())
+            if(current->data.find(word[index]) == current->data.end())
             {
-                curr->data[word[i]] = new Node();
+                current->data[word[index]] = new Node(); 
+
             }
-            curr = curr->data[word[i]];
+            prev = current;
+            current = current->data[word[index]];
+            index++;
         }
-        curr->end = true;
+        current->is_end = true;
     }
     
     bool search(string word) {
-        bool result = true;
-        Node* curr = dict;
+        
+        Node* current = tree;
+        Node* prev = nullptr;
+        int index = 0;
 
-        int i = 0;
-
-        while((i < word.size()) && (curr->data.find(word[i]) != curr->data.end()))
+        while(current != nullptr && index < word.size())
         {
-            curr = curr->data[word[i]];
-            i++;
+            if(current->data.find(word[index]) == current->data.end())
+            {
+                return false;                
+            }
+            prev = current;
+            current = current->data[word[index]];
+            index++;
         }
 
-        result = (i == word.size()) && (curr->end == true);
-
-        return result;
+        return (current->is_end) && (index == word.size());
     }
     
     bool startsWith(string prefix) {
-        bool result = true;
-        Node* curr = dict;
+        Node* current = tree;
+        int index = 0;
 
-        int i = 0;
-
-        while((i < prefix.size()) && (curr->data.find(prefix[i]) != curr->data.end()))
+        while(current != nullptr && index < prefix.size())
         {
-            curr = curr->data[prefix[i]];
-            i++;
+            if(current->data.find(prefix[index]) == current->data.end())
+            {
+                return false;                
+            }
+
+            current = current->data[prefix[index]];
+            index++;
         }
 
-        result = (i == prefix.size());
-
-        return result;
+        return (index == prefix.size());
+        
     }
 };
 
