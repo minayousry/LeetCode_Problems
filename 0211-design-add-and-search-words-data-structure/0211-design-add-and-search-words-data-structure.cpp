@@ -17,6 +17,15 @@ public:
     WordDictionary() {
         dictionary = &node;
     }
+
+    ~WordDictionary()
+    {
+        for(auto &elm:dictionary->letters)
+        {
+            delete elm.second;
+        }
+
+    }
     
     void addWord(string word) {
         
