@@ -18,14 +18,23 @@ public:
         dictionary = &node;
     }
 
+    void freeNode(Node* root)
+    {
+        for(auto &elm:root->letters)
+        {
+            freeNode(elm.second);
+            delete elm.second;
+        }
+    }
+
     ~WordDictionary()
     {
         for(auto &elm:dictionary->letters)
         {
-            delete elm.second;
+            freeNode(elm.second);
         }
-
     }
+
     
     void addWord(string word) {
         
