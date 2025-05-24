@@ -1,35 +1,40 @@
+
 struct Compare
 {
-    bool operator()(const pair<double,vector<int>>& a,const pair<double,vector<int>>& b)
+    bool operator()(const pair<double,vector<int>> a,const pair<double, vector<int>> b)
     {
-        return (a.first > b.first);
+        return a.first > b.first;
     }
 };
 
 class Solution {
 public:
+
+
+
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
         
         vector<vector<int>> result;
-        priority_queue<pair<double,vector<int>>,vector<pair<double,vector<int>>>,Compare> points_data;
 
-        double distance;
+        priority_queue< pair<double, vector<int>>,vector<pair<double, vector<int>>>,Compare>  points_data;
 
-        for(const auto &point:points)
+        for(int i=0;i<points.size();++i)
         {
-            distance = sqrt(pow(point[0],2) + pow(point[1],2));
-            points_data.push(make_pair(distance,point));
+            
+            double calc = sqrt(pow(points[i][0],2) + pow(points[i][1],2));
+            points_data.push( {calc, {points[i][0],points[i][1]} } );
+            
         }
 
-        int count = 0;
-
-        while(!points.empty() && count < k)
+        while(!points_data.empty() && k > 0)
         {
-            result.push_back(points_data.top().second);
+            auto elm = points_data.top();
             points_data.pop();
-            count++;
+            result.push_back(elm.second);
+            k--;
         }
 
         return result;
+
     }
 };
