@@ -22,17 +22,15 @@ public:
     void insert(string word) {
         
         Node* current = tree;
-        Node* prev = nullptr;
         int index = 0;
 
-        while(current != nullptr && index < word.size())
+        while(index < word.size())
         {
             if(current->data.find(word[index]) == current->data.end())
             {
                 current->data[word[index]] = new Node(); 
 
             }
-            prev = current;
             current = current->data[word[index]];
             index++;
         }
@@ -42,16 +40,14 @@ public:
     bool search(string word) {
         
         Node* current = tree;
-        Node* prev = nullptr;
         int index = 0;
 
-        while(current != nullptr && index < word.size())
+        while(index < word.size())
         {
             if(current->data.find(word[index]) == current->data.end())
             {
                 return false;                
             }
-            prev = current;
             current = current->data[word[index]];
             index++;
         }
@@ -63,7 +59,7 @@ public:
         Node* current = tree;
         int index = 0;
 
-        while(current != nullptr && index < prefix.size())
+        while(index < prefix.size())
         {
             if(current->data.find(prefix[index]) == current->data.end())
             {
