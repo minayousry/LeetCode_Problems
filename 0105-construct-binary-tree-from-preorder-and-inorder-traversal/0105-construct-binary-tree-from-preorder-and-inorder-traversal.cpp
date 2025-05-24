@@ -11,40 +11,43 @@
  */
 class Solution {
 public:
-    int counter = 0;
 
-    TreeNode* buildsubtree(vector<int>& preorder,unordered_map<int,int> &mapping,int l,int r)
+    unordered_map<int,int> inordere_index;
+    int current_index;
+
+    TreeNode* constructTree(vector<int>& preorder,int start_index,int end_index)
     {
-        
-        if( l > r)
+        if(start_index > end_index)
         {
             return nullptr;
         }
 
-        int root_val = preorder[counter];
-        TreeNode* root = new TreeNode(root_val);
-        counter++;
-        
-        int mid = mapping[root_val];
-        
+        TreeNode* root = new TreeNode(preorder[current_index]);
 
-        root->left = buildsubtree(preorder,mapping,l,mid - 1);
+        int mid = inordere_index[preorder[current_index]];
 
-        root->right = buildsubtree(preorder,mapping,mid + 1,r);
+        current_index++;
 
+        root->left = constructTree(preorder,start_index,mid - 1);
+        root->right = constructTree(preorder,mid + 1,end_index);
         return root;
     }
 
-    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
 
-        unordered_map<int,int> mapping_data;
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        
+        current_index = 0;
 
         for(int i=0;i<inorder.size();++i)
         {
-            mapping_data[inorder[i]] = i;
-        }  
+            inordere_index[inorder[i]] = i;
+        }
 
-        return buildsubtree(preorder,mapping_data,0,preorder.size() - 1);  
+        TreeNode *root;
+
+        root = constructTree(preorder,0,preorder.size() - 1);
+        return root;
+        
+
     }
-    
 };
