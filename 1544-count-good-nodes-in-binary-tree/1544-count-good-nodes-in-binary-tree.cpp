@@ -9,33 +9,32 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
 class Solution {
 public:
-    int dfs(TreeNode* node,int max_val)
+
+    void countNodes(TreeNode* root,int compare_val,int &result)
     {
-        int res = 0;
-        if(node == nullptr)
+        if(!root)
         {
-            return 0;
+            return;
         }
         
-        if(node->val >= max_val)
+        if(root->val >= compare_val)
         {
-            res = 1;
-        }
-        else
-        {
-            res = 0;
+            result+= 1;
         }
 
-        max_val = max(max_val,node->val);
-
-        res += dfs(node->left,max_val);
-        res += dfs(node->right,max_val);
-        return res;
+        countNodes(root->left, max(root->val,compare_val),result);
+        countNodes(root->right, max(root->val,compare_val),result);
 
     }
+
     int goodNodes(TreeNode* root) {
-        return dfs(root,root->val);
+
+        int result = 0;
+        countNodes(root,INT_MIN,result);
+        return result;
+ 
     }
 };
