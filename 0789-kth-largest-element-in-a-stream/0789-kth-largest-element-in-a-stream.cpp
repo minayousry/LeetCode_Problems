@@ -1,33 +1,32 @@
 class KthLargest {
 public:
-    priority_queue<int,vector<int>,std::greater<int>> data;
-    int limit;
+    priority_queue<int,vector<int>,greater<int>> heap;
+    int capacity;
 
     KthLargest(int k, vector<int>& nums) {
-        limit = k;
-        for(const auto &num:nums)
+        
+        capacity = k;
+        for(auto num:nums)
         {
-            data.push(num);
-        } 
-
-        int pop_limit = data.size() - limit;
-        int count = 0;   
-
-        while(!data.empty() && (count < pop_limit))
-        {
-            data.pop();
-            count++;
+            heap.push(num);
         }
+
+        while(heap.size() > k)
+        {
+            heap.pop();
+        }   
+
     }
     
     int add(int val) {
-        data.push(val);
         
-        if (data.size() > limit) {
-            data.pop();
+        heap.push(val);
+        
+        if(heap.size() > capacity)
+        {
+            heap.pop();
         }
-        return data.top();
-
+        return heap.top();
     }
 };
 
