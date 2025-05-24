@@ -9,34 +9,32 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
 class Solution {
 public:
 
-    int dfs(TreeNode* root,int &k)
+    void dfs(TreeNode* root,int &k,int &res)
     {
-        if(!root)
-            return -1;
 
+        if(root == nullptr)
+        {
+            return;
+        }
         
-        int left = dfs(root->left,k);
-        if(left != -1) return left;
-        
+        dfs(root->left,k,res);
         k--;
         if(k == 0)
         {
-            return root->val;
+            res = root->val;
+            return;
         }
-        
-        
-        return dfs(root->right,k);
-       
-        return -1;
-        
+        dfs(root->right,k,res);
     }
 
 
     int kthSmallest(TreeNode* root, int k) {
-        return dfs(root,k);
+        int res = 0;
+        dfs(root,k,res);
+        return res;
+
     }
 };
