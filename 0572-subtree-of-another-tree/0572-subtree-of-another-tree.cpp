@@ -12,42 +12,51 @@
 class Solution {
 public:
 
-    bool isSameTree(TreeNode* root, TreeNode* subRoot)
+    bool isSameTree(TreeNode* t1, TreeNode* t2)
     {
-
-        if((root == nullptr)|| (subRoot == nullptr))
+        if(!t1 && !t2)
         {
-            return root == subRoot;
+            return true;
         }
-
-        if(root->val != subRoot->val)
+        else if(!t1 || !t2)
         {
             return false;
         }
-
-        return ( isSameTree(root->left,subRoot->left) && isSameTree(root->right,subRoot->right) );
-
+        else if(t1->val != t2->val)
+        {
+            return false;
+        }
+        else
+        {
+            return isSameTree(t1->left,t2->left) && isSameTree(t1->right,t2->right); 
+        }
     }
 
-    bool isSubtree(TreeNode* root, TreeNode* subRoot)
-    {
-        if(subRoot == nullptr)
+
+    bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+        bool result = false;
+
+        if(!root && !subRoot)
         {
             return true;
         }
-
-        if(root == nullptr)
+        else if(!subRoot)
+        {
+            return true;
+        }
+        else if(!root)
         {
             return false;
         }
-
-        if(isSameTree(root,subRoot))
+        else if(root->val == subRoot->val)
         {
-            return true;
+            if(isSameTree(root,subRoot))
+            {
+                return true;
+            }
         }
         
-        return (isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot));
-
+        return isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot);
         
     }
 };
