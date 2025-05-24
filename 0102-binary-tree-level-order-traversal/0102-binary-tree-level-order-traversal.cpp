@@ -12,40 +12,38 @@
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        vector<vector<int>> result;
         queue<TreeNode*> data;
 
-        if(root != nullptr)
-        {
+        vector<vector<int>> res;
+
+        if(root)
             data.push(root);
-        }
-        
+
         while(!data.empty())
         {
-            TreeNode* node = data.front();
+            int data_size = data.size();
+            vector<int> line_data;
 
-            vector<int> found_data;
-            int queue_size = data.size(); 
-            for(int i=0;i<queue_size;++i)
+            for(int i=0;i<data_size;++i)
             {
-                TreeNode* node = data.front();
+                auto elm = data.front();
                 data.pop();
-                found_data.push_back(node->val);
-                
-                if(node->left)
+
+                line_data.emplace_back(elm->val);
+
+                if(elm->left)
                 {
-                    data.push(node->left);
+                    data.push(elm->left);
                 }
 
-                if(node->right)
+                if(elm->right)
                 {
-                    data.push(node->right);
+                    data.push(elm->right);
                 }
             }
-            result.push_back(found_data);
-            
+            res.emplace_back(line_data);
         }
-        return result;
 
+        return res;
     }
 };
