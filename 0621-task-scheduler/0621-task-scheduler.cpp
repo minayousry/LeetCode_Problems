@@ -2,52 +2,53 @@ class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
         
-        unordered_map<char,int> tasks_data;
-        priority_queue<int> tasks_info;
+        unordered_map<int,int> tasks_freq;
+
+        for(auto &task:tasks)
+        {
+            tasks_freq[task]++;
+        }
+
+        priority_queue<int> tasks_count;
+
+        for(auto &task:tasks_freq)
+        {
+            tasks_count.push(task.second);
+        }
+
+        queue<pair<int,int>> tasks_schedule;
         int time = 0;
-
-        for(int i=0;i < tasks.size();++i)
+        while(!tasks_count.empty() || !tasks_schedule.empty())
         {
-            tasks_data[tasks[i]]++;
-        }
+            time++;
 
-        for(auto &task:tasks_data)
-        {
-            tasks_info.push(task.second);
-        }
-
-        queue<pair<int,int>> schedule;
-
-        while(!tasks_info.empty() || !schedule.empty())
-        {
-            time += 1;
-
-            if(!tasks_info.empty())
+            if(!tasks_count.empty())
             {
-                int task_count = tasks_info.top();
-                tasks_info.pop();
-
-                if(task_count > 1)
-                {
-                    schedule.push(make_pair((task_count - 1),time + n));
-                }
-            }
-
-            if(!schedule.empty())
-            {
-                int task_time = schedule.front().second;
+                auto task_count = tasks_count.top();
+                tasks_count.pop();
                 
-                if(task_time == time)
+                if(task_count > 1)
+                {    
+                    tasks_schedule.push({task_count - 1,time + n});
+                }
+                
+            }
+
+            if(!tasks_schedule.empty())
+            {
+                auto task_data = tasks_schedule.front();
+
+                if(time == task_data.second)
                 {
-                    int task_count = schedule.front().first;
-                    schedule.pop();
-                    tasks_info.push(task_count);
+                    tasks_schedule.pop();
+                    tasks_count.push(task_data.first);
                 }
             }
         }
+
         return time;
+
+
+
     }
-
-
-
 };
