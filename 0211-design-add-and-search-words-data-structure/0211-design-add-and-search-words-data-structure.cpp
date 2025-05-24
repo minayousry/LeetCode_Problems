@@ -1,6 +1,6 @@
 struct Node
 {
-    unordered_map<char ,Node*> letters;
+    unordered_map<char ,unique_ptr<Node>> letters;
     bool is_end = false;
     Node()
     {
@@ -12,34 +12,16 @@ class WordDictionary {
 public:
 
     Node node;
-    Node* dictionary;
+    unique_ptr<Node> dictionary;
 
     WordDictionary() {
-        dictionary = &node;
+        dictionary = make_unique<Node>();
     }
-
-    void freeNode(Node* root)
-    {
-        for(auto &elm:root->letters)
-        {
-            freeNode(elm.second);
-            delete elm.second;
-        }
-    }
-
-    ~WordDictionary()
-    {
-        for(auto &elm:dictionary->letters)
-        {
-            freeNode(elm.second);
-        }
-    }
-
     
     void addWord(string word) {
         
         int index = 0;
-        Node* curr = dictionary;
+        Node* curr = dictionary.get();
         char letter;
 
         while(index < word.size())
@@ -48,10 +30,10 @@ public:
 
             if(curr->letters.find(letter) == curr->letters.end())
             {
-                curr->letters[letter] = new Node();
+                curr->letters[letter] = std::make_unique<Node>();
             }
 
-            curr = curr->letters[letter];
+            curr = curr->letters[letter].get();
             index++;
         }
         curr->is_end = true;
@@ -72,14 +54,14 @@ public:
                 {
                     return false;
                 }
-                curr = curr->letters[letter];
+                curr = curr->letters[letter].get();
                 index++;
             }
             else
             {
                 for(auto &elm:curr->letters)
                 {
-                    if( check_word(elm.second,word,index + 1) ) 
+                    if( check_word(elm.second.get(),word,index + 1) ) 
                     {
                         return true;
                     }
@@ -92,7 +74,7 @@ public:
     }
     
     bool search(string word) {
-        return check_word(dictionary,word,0);
+        return check_word(dictionary.get(),word,0);
     }
         
     
