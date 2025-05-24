@@ -1,78 +1,83 @@
 struct Node
 {
-    unordered_map<char,Node*> data;
-    bool end;
-
+    unordered_map<char ,Node*> letters;
+    bool is_end = false;
     Node()
     {
-        end = false;
+        is_end = false;
     }
 };
 
-
 class WordDictionary {
 public:
-    Node* dict;
+
+    Node node;
+    Node* dictionary;
 
     WordDictionary() {
-        dict = new Node();
+        dictionary = &node;
     }
     
     void addWord(string word) {
-        Node* curr = dict;
+        
+        int index = 0;
+        Node* curr = dictionary;
+        char letter;
 
-        for(int i=0;i<word.size();++i)
+        while(index < word.size())
         {
-            if(curr->data.find(word[i]) == curr->data.end())
+            letter = word[index];
+
+            if(curr->letters.find(letter) == curr->letters.end())
             {
-                curr->data[word[i]] = new Node();
+                curr->letters[letter] = new Node();
             }
-            curr = curr->data[word[i]];
+
+            curr = curr->letters[letter];
+            index++;
         }
-        curr->end = true;
+        curr->is_end = true;
     }
 
-
-
-    bool dfs(string &word,int index,Node* root)
+    bool check_word(Node* dict,string &word,int index)
     {
-        bool result = true;
-        Node* curr = root;
+        Node* curr = dict;
+        char letter;
 
-        int i = index;
-
-        while(i < word.size())
+        while(index < word.size())
         {
-            if (word[i] != '.')
+            letter = word[index];
+
+            if(letter != '.')
             {
-                if (curr->data.find(word[i]) == curr->data.end())
+                if(curr->letters.find(letter) == curr->letters.end())
                 {
                     return false;
                 }
-                curr = curr->data[word[i]];
-                i++;
+                curr = curr->letters[letter];
+                index++;
             }
             else
             {
-                for(auto &pair:curr->data)
+                for(auto &elm:curr->letters)
                 {
-                    if(dfs(word,i+1,pair.second))
+                    if( check_word(elm.second,word,index + 1) ) 
                     {
                         return true;
                     }
                 }
                 return false;
             }
-
         }
 
-        return  curr->end == true;
+        return (curr->is_end);
     }
     
     bool search(string word) {
-        
-        return dfs(word,0,dict);
+        return check_word(dictionary,word,0);
     }
+        
+    
 };
 
 /**
