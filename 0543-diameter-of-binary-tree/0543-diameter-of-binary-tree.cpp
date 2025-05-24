@@ -12,24 +12,27 @@
 class Solution {
 public:
 
-     int dfs(TreeNode *root,int &res)
+    int getDepth(TreeNode* root,int &res)
     {
         if(root == nullptr)
         {
             return 0;
         }
-        int left = dfs(root->left,res);
-        int right = dfs(root->right,res);
+        else
+        {
+            int left_branch = getDepth(root->left,res);
+            int right_branch = getDepth(root->right,res);
 
-        res = max(res,(left + right));
-
-        return (1 + max(left,right)); 
-        
+            res = max(res,left_branch + right_branch);
+             
+            return (1 + max(left_branch,right_branch));
+        }
     }
+
 
     int diameterOfBinaryTree(TreeNode* root) {
         int res = 0;
-        dfs(root,res);
+        getDepth(root,res);
         return res;
     }
 };
