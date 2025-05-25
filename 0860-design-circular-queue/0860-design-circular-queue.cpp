@@ -1,78 +1,82 @@
 
-struct circular_queue
+struct CircularQueue
 {
-    int data[1000];
+    vector<int> data;
     int head;
     int tail;
-    int size;
-    int count;
+    int count = 0;
+
+    CircularQueue(int capacity):data(capacity,0)
+    {
+        head = 0;
+        tail = -1;
+    }
+
+
 };
 
 class MyCircularQueue {
 public:
-    struct circular_queue cqueue;
+
+    unique_ptr<CircularQueue> buffer;
+
     MyCircularQueue(int k) {
-        cqueue.head = 0;
-        cqueue.tail = 0;
-        cqueue.count = 0;
-        cqueue.size = k;
-    }   
+
+        buffer = make_unique<CircularQueue>(k);
+    }
     
     bool enQueue(int value) {
-        if(isFull())
-            return false;
-
-        cqueue.data[cqueue.tail % cqueue.size] = value;
-        cqueue.tail = (cqueue.tail % cqueue.size) + 1;
-        cqueue.count++;
         
-        return true;
+        if(buffer->count < buffer->data.size())
+        {
+            buffer->tail  = (buffer->tail  + 1) % buffer->data.size();
+            buffer->data[buffer->tail] = value;
+            buffer->count++;
+            return true;
+        }
+        return false;
+         
     }
     
     bool deQueue() {
-        if(isEmpty())
-            return false;
+        if(buffer->count > 0)
+        {
+            buffer->head  = (buffer->head  + 1) % buffer->data.size();
+            buffer->count--;
+            return true;
+        }
+        return false;
 
-        cqueue.head = (cqueue.head % cqueue.size) + 1;
-        cqueue.count--;
-        return true;
     }
     
     int Front() {
-        if(isEmpty())
+        if(buffer->count == 0)
+        {
             return -1;
-
-        return cqueue.data[cqueue.head % cqueue.size];
-        
+        }
+        else
+        {
+            return buffer->data[buffer->head];
+        }
     }
     
     int Rear() {
-        if(isEmpty())
+        if(buffer->count == 0)
+        {
             return -1;
-
-        return cqueue.data[(cqueue.tail - 1 + cqueue.size) % cqueue.size];
+        }
+        else
+        {
+            return buffer->data[buffer->tail];
+        }
     }
     
     bool isEmpty() {
-        if(cqueue.count == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (buffer->count == 0);
     }
     
     bool isFull() {
-        if(cqueue.count == cqueue.size)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (buffer->count == buffer->data.size());
     }
 };
 
