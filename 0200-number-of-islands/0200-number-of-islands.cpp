@@ -1,56 +1,57 @@
 class Solution {
 public:
-    
-    bool isIsland(vector<vector<char>>& grid,vector<vector<bool>> &visited,int row,int col)
+    int moves[4][2] = {{0,1},{0,-1},{1,0},{-1,0}};
+
+    void checkIsland(vector<vector<char>>& grid,int i,int j)
     {
-        stack<pair<int,int>> islands;
-        vector<vector<int>> directions = {{1,0,},{-1,0},{0,1},{0,-1}};
+        queue<pair<int,int>> points;
 
-        islands.push(make_pair(row,col));
+        points.push({i,j});
+       
 
-        while(!islands.empty())
+        while(!points.empty())
         {
-            pair<int,int> island = islands.top();
-            visited[row][col] = true;
-            islands.pop();    
+            auto point = points.front();
+            points.pop();
 
-            for(int i=0;i<4;i++)
+            int row = point.first;
+            int col = point.second;
+            
+            for(int i=0;i<4;++i)
             {
-                int new_row = island.first + directions[i][0];
-                int new_col = island.second + directions[i][1];
+                int x_index =  row + moves[i][0];
+                int y_index =  col + moves[i][1];
                 
-                if(new_row >=0 && new_row < grid.size() && new_col >= 0 && new_col < grid[0].size() && 
-                    (visited[new_row][new_col] == false) && grid[new_row][new_col] == '1')
-                {
-                    islands.push(make_pair(new_row,new_col));
-                    visited[new_row][new_col] = true;
-                }
-                
-            }
+                if(x_index >=0 && x_index < grid.size() && y_index >=0 && y_index < grid[0].size() &&
+                 grid[x_index][y_index] == '1')
+                 {
+                    points.push({x_index,y_index});
+                    grid[x_index][y_index] = '0';
 
+                 }
+            }
         }
-        return true;
     }
 
+
     int numIslands(vector<vector<char>>& grid) {
+
+        int numIslands = 0;
         
-        int islands = 0;
-
-        vector<vector<bool>> visited(grid.size(),vector<bool>(grid[0].size(),false));
-
-        for(int i=0;i<grid.size();++i)
+        for(int i=0;i< grid.size();++i)
         {
             for(int j=0;j<grid[0].size();++j)
             {
-                if (grid[i][j] == '1' && !visited[i][j]) {
-                    if (isIsland(grid, visited, i, j)) {
-                        islands++;
-                    }
+                
+                if(grid[i][j] == '1')
+                {
+                    checkIsland(grid,i,j);
+                    grid[i][j] = '0';
+                    numIslands++;
                 }
-            
             }
         }
 
-        return islands;      
+        return numIslands;
     }
 };
