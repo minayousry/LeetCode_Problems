@@ -2,6 +2,29 @@ class Solution {
 public:
     int moves[4][2] = {{0,1},{0,-1},{1,0},{-1,0}};
 
+    void checkIsland2(vector<vector<char>>& grid,int row,int col)
+    {
+        if(row < 0 || row >=  grid.size() || col < 0 || col >= grid[0].size() || grid[row][col] == '0')
+        {
+            return;
+        }
+
+        grid[row][col] = '0';
+        
+        int new_row,new_col;
+
+        for(int i=0;i<4;++i)
+        {
+            new_row = row + moves[i][0];
+            new_col = col + moves[i][1];
+
+            checkIsland2(grid,new_row,new_col);
+        }
+
+        
+    }
+    
+    
     void checkIsland(vector<vector<char>>& grid,int i,int j)
     {
         queue<pair<int,int>> points;
@@ -45,7 +68,7 @@ public:
                 
                 if(grid[i][j] == '1')
                 {
-                    checkIsland(grid,i,j);
+                    checkIsland2(grid,i,j);
                     grid[i][j] = '0';
                     numIslands++;
                 }
