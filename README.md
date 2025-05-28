@@ -148,6 +148,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0002-add-two-numbers](https://github.com/minayousry/LeetCode_Problems/tree/master/0002-add-two-numbers) |
 | [0069-sqrtx](https://github.com/minayousry/LeetCode_Problems/tree/master/0069-sqrtx) |
+| [0070-climbing-stairs](https://github.com/minayousry/LeetCode_Problems/tree/master/0070-climbing-stairs) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/minayousry/LeetCode_Problems/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0367-valid-perfect-square](https://github.com/minayousry/LeetCode_Problems/tree/master/0367-valid-perfect-square) |
 | [0412-fizz-buzz](https://github.com/minayousry/LeetCode_Problems/tree/master/0412-fizz-buzz) |
@@ -169,6 +170,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0022-generate-parentheses](https://github.com/minayousry/LeetCode_Problems/tree/master/0022-generate-parentheses) |
 | [0042-trapping-rain-water](https://github.com/minayousry/LeetCode_Problems/tree/master/0042-trapping-rain-water) |
+| [0070-climbing-stairs](https://github.com/minayousry/LeetCode_Problems/tree/master/0070-climbing-stairs) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/minayousry/LeetCode_Problems/tree/master/0121-best-time-to-buy-and-sell-stock) |
 ## Backtracking
 |  |
@@ -406,4 +408,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1014-k-closest-points-to-origin](https://github.com/minayousry/LeetCode_Problems/tree/master/1014-k-closest-points-to-origin) |
+## Memoization
+|  |
+| ------- |
+| [0070-climbing-stairs](https://github.com/minayousry/LeetCode_Problems/tree/master/0070-climbing-stairs) |
 <!---LeetCode Topics End-->
