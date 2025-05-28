@@ -23,33 +23,62 @@ class Solution {
 public:
     unordered_map<Node*,Node*> dict;
 
-    Node* cloneNode(Node* node)
+    void parseNodes(Node* node)
     {
-        Node* copy;
-        if(node == nullptr)
+
+        if(node == nullptr || dict.find(node) != dict.end())
         {
-            return nullptr;
+            return;
         }
-        else if(dict.find(node) != dict.end())
+        else
         {
+            dict[node] = new Node(node->val);
+        }
+
+        
+        for(auto neighbour:node->neighbors)
+        {
+            parseNodes(neighbour);
+        }
+    }
+
+    void clone(Node* node)
+    {
+        if(node->neighbors.size() ==  dict[node]->neighbors.size())
+        {
+            return;
+        }
+        else
+        {
+            
+            for(int i=0;i<node->neighbors.size();++i)
+            {
+                dict[node]->neighbors.push_back(dict[node->neighbors[i]]);
+            }
+        }
+
+        for(auto neighbour:node->neighbors)
+        {
+            clone(neighbour);
+        }
+    }
+
+
+
+
+
+    Node* cloneGraph(Node* node) {
+        
+        if(node)
+        {
+            parseNodes(node);
+            clone(node);
             return dict[node];
         }
         else
         {
-            copy = new Node(node->val);
-            dict[node] = copy;
-
-            for(const auto &neighbour:node->neighbors)
-            {
-                copy->neighbors.emplace_back(cloneNode(neighbour));
-            }
-            
+            return nullptr;
         }
-        return copy;
-
-    }
-
-    Node* cloneGraph(Node* node) {
-        return cloneNode(node);
+        
     }
 };
